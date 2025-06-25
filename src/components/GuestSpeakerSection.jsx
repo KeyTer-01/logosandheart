@@ -22,11 +22,11 @@ const GuestSpeakerSection = () => (
       />
       <Box maxW="lg" textAlign={{ base: "center", md: "left" }}>
         <Heading size="md" mb={2}>
-          Dr. Grace Nwachukwu
+          Coming Soon
         </Heading>
         <Text fontSize="md" color="gray.600">
-          A renowned Christian psychologist and art therapist, Dr. Grace brings
-          deep insights into faith, creativity, and healing.
+          Coming soon: Our guest speaker will be announced shortly. Stay tuned
+          for updates!
         </Text>
       </Box>
     </Stack>
