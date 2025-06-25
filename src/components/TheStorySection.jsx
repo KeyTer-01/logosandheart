@@ -40,14 +40,14 @@ const TheStorySection = () => {
     <Box
       as="section"
       pos="relative"
-      bg="black"
-      color="white"
+      // bg="black"
+      color="black"
       px={{ base: 4, md: 10 }}
       py={{ base: 20, md: 28 }}
       overflow="hidden"
     >
       {/* Blurred Glows */}
-      <MotionBox
+      {/* <MotionBox
         pos="absolute"
         top="12%"
         left="6%"
@@ -86,7 +86,7 @@ const TheStorySection = () => {
         transform="translateX(-50%)"
         animate={{ opacity: [0, 0.4, 0] }}
         transition={{ duration: 7, repeat: Infinity }}
-      />
+      /> */}
 
       {/* Floating Dots */}
       {[
@@ -123,7 +123,7 @@ const TheStorySection = () => {
         <Heading fontSize={{ base: "3xl", md: "5xl" }} mb={4} fontWeight="bold">
           The Story We&apos;re Telling
         </Heading>
-        <Text fontSize={{ base: "md", md: "lg" }} color="gray.300">
+        <Text fontSize={{ base: "md", md: "lg" }} color="gray.600">
           Through curated artworks, we will explore faith&apos;s narrative in
           three movements:
         </Text>

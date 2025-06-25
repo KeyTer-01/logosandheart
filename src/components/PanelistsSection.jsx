@@ -35,7 +35,8 @@ const PanelistsSection = () => {
   return (
     <Box
       w="100%"
-      bgGradient="linear(to-r, white, gray.50)"
+      // bgGradient="linear(to-r, white, gray.50)"
+      bg={"black"}
       py={{ base: 10, md: 20 }}
       px={{ base: 4, md: 10 }}
     >
@@ -44,7 +45,7 @@ const PanelistsSection = () => {
         mb={10}
         fontSize={{ base: "2xl", md: "4xl" }}
         fontWeight="bold"
-        color="gray.700"
+        color="yellow.400"
       >
         Meet The Panelists
       </Heading>
