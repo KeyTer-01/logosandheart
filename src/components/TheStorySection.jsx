@@ -93,7 +93,7 @@ const TheStorySection = () => {
       /> */}
 
       {/* Floating Dots */}
-      {[
+      {/* {[
         { top: "15%", left: "10%", bg: "whiteAlpha.400", size: 1 },
         { top: "25%", right: "20%", bg: "red.300", size: 2 },
         { bottom: "20%", left: "30%", bg: "green.300", size: 2 },
@@ -113,7 +113,7 @@ const TheStorySection = () => {
             repeat: Infinity,
           }}
         />
-      ))}
+      ))} */}
 
       {/* Title and Subtitle */}
       <Box

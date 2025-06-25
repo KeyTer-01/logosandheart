@@ -1,11 +1,11 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
-import bgImage from "../assets/images/dark-bg.jpg";
+import bgImage from "../assets/images/bg.png";
 import { ArrowUpRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <>
-      <Flex
+      {/* <Flex
         pos="fixed"
         // bg="black"
         minH="100vh"
@@ -22,7 +22,7 @@ const HeroSection = () => {
         bgPosition="center"
         bgRepeat="no-repeat"
         zIndex={-1}
-      />
+      /> */}
 
       <Flex
         pos="relative"
@@ -37,6 +37,10 @@ const HeroSection = () => {
         alignItems={{ base: "flex-start", md: "center" }}
         gap={6}
         overflow="hidden"
+        bgImage={`url(${bgImage})`}
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
       >
         {/* Overlay */}
         {/* <Box
@@ -75,6 +79,7 @@ const HeroSection = () => {
           fontWeight={700}
           zIndex={1}
           lineHeight={1}
+          letterSpacing={-4}
         >
           LOGOS <span style={{ color: "yellow" }}>&</span> he
           <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
