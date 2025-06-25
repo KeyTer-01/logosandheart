@@ -15,21 +15,21 @@ const storyItems = [
     description:
       "A visual journey into creation, the Word, the beginnings of everything, and Man (spirit, soul, body)",
     bg: "linear(to-br, red.800, red.500)",
-    glow: "0 0 30px rgba(239, 68, 68, 0.6)",
+    glow: "0 0 10px rgba(239, 68, 68, 0.6)",
   },
   {
     title: "FAITH HAS BEEN SAVING US",
     description:
       "Stories of those who walked by faith, showcasing victories and struggles (Faith without works and Faith by works)",
     bg: "linear(to-br, green.800, green.500)",
-    glow: "0 0 30px rgba(72, 187, 120, 0.6)",
+    glow: "0 0 10px rgba(72, 187, 120, 0.6)",
   },
   {
     title: "FAITH WILL SAVE US",
     description:
       "A call to live by faith now, no matter the darkness, trusting God's word to carry us in this present time",
     bg: "linear(to-br, yellow.600, yellow.400)",
-    glow: "0 0 30px rgba(251, 191, 36, 0.5)",
+    glow: "0 0 10px rgba(251, 191, 36, 0.5)",
   },
 ];
 
@@ -57,7 +57,7 @@ const TheStorySection = () => {
         rounded="full"
         filter="blur(120px)"
         opacity={0.25}
-        animate={{ opacity: [0.15, 0.3, 0.15] }}
+        animate={{ opacity: [0, 0.3, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
       <MotionBox
@@ -70,7 +70,7 @@ const TheStorySection = () => {
         rounded="full"
         filter="blur(120px)"
         opacity={0.2}
-        animate={{ opacity: [0.2, 0.5, 0.2] }}
+        animate={{ opacity: [0, 0.5, 0] }}
         transition={{ duration: 5, repeat: Infinity }}
       />
       <MotionBox
@@ -84,7 +84,7 @@ const TheStorySection = () => {
         filter="blur(100px)"
         opacity={0.15}
         transform="translateX(-50%)"
-        animate={{ opacity: [0.1, 0.4, 0.1] }}
+        animate={{ opacity: [0, 0.4, 0] }}
         transition={{ duration: 7, repeat: Infinity }}
       />
 
