@@ -25,8 +25,7 @@ const GuestSpeakerSection = () => (
           Coming Soon
         </Heading>
         <Text fontSize="md" color="gray.600">
-          Coming soon: Our guest speaker will be announced shortly. Stay tuned
-          for updates!
+          Our Keynote speaker will be announced shortly. Stay tuned for updates!
         </Text>
       </Box>
     </Stack>

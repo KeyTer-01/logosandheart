@@ -43,6 +43,7 @@ const theme = extendTheme({
   fonts: {
     heading: "'Poppins', sans-serif",
     body: "'Inter', sans-serif",
+    secondary: "'Chivo', sans-serif",
   },
 });
 

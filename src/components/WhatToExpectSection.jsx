@@ -6,9 +6,10 @@ import {
   useBreakpointValue,
   Icon,
   Link,
+  Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
@@ -115,7 +116,22 @@ const WhatToExpectSection = () => {
           transition={{ duration: 0.6, delay: expectations.length * 0.15 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Kindly register via this link —{" "}
+          <Button
+            as="a"
+            href="https://tix.africa/discover/logosandheart"
+            target="_blank"
+            rel="noopener noreferrer"
+            w="100%"
+            variant="outline"
+            // bg="white"
+            color="black"
+            display="flex"
+            gap={2}
+            border={"2px solid darkred"}
+          >
+            Get a Ticket <ArrowUpRight size={20} />
+          </Button>
+          {/* Kindly register via this link —{" "}
           <Link
             href="https://linktr.ee/logosandheart"
             isExternal
@@ -124,7 +140,7 @@ const WhatToExpectSection = () => {
             _hover={{ textDecoration: "underline", color: "red.400" }}
           >
             https://linktr.ee/logosandheart
-          </Link>
+          </Link> */}
         </MotionText>
       </Stack>
     </Box>

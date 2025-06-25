@@ -124,7 +124,12 @@ const TheStorySection = () => {
         mx="auto"
         mb={4}
       >
-        <Heading fontSize={{ base: "3xl", md: "5xl" }} mb={4} fontWeight="bold">
+        <Heading
+          fontFamily={"secondary"}
+          fontSize={{ base: "3xl", md: "5xl" }}
+          mb={4}
+          fontWeight="bold"
+        >
           The Story We&apos;re Telling
         </Heading>
         <Text fontSize={{ base: "md", md: "lg" }} color="gray.600">
@@ -157,7 +162,13 @@ const TheStorySection = () => {
               boxShadow: `0 0 50px rgba(255, 255, 255, 0.3)`,
             }}
           >
-            <Text fontSize="xl" fontWeight="bold" mb={3} color={"darkRed"}>
+            <Text
+              fontFamily={"secondary"}
+              fontSize="xl"
+              fontWeight="bold"
+              mb={3}
+              color={"darkRed"}
+            >
               {item.title}
             </Text>
             <Text fontSize="md" color="black">

@@ -51,6 +51,7 @@ const PanelistsSection = () => {
       id="panelists"
     >
       <Heading
+        fontFamily={"secondary"}
         textAlign="center"
         mb={10}
         fontSize={{ base: "2xl", md: "4xl" }}

@@ -17,14 +17,15 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Story", href: "#story" },
   { label: "Panelists", href: "#panelists" },
   { label: "Speakers", href: "#speakers" },
-  // { label: "Expectations", href: "#expect" },
+  { label: "Expectations", href: "#expect" },
   // { label: "Goal", href: "#goal" },
   // { label: "Details", href: "#details" },
   // { label: "Register", href: "#cta" },
@@ -55,7 +56,7 @@ const Navbar = () => {
         mx="auto"
       >
         <Text fontWeight="bold" fontSize="lg" color="white">
-          LOGOS & he
+          LOGOS <span style={{ color: "yellow" }}>&</span> he
           <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
         </Text>
 
@@ -76,7 +77,7 @@ const Navbar = () => {
               <DrawerContent
                 bg="transparent"
                 backdropFilter="blur(10px)"
-                maxW="250px"
+                maxW="300px"
               >
                 <DrawerCloseButton color="white" />
                 <DrawerBody pt={16}>
@@ -94,6 +95,41 @@ const Navbar = () => {
                         {link.label}
                       </Button>
                     ))}
+                    <Flex
+                      flexDirection={{ base: "column", md: "row" }}
+                      width={{ base: "100%", md: "50%" }}
+                      gap={4}
+                      alignItems={{ base: "flex-start" }}
+                      zIndex={1}
+                    >
+                      <Button
+                        as="a"
+                        href="https://tix.africa/discover/logosandheart"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        w="100%"
+                        variant="solid"
+                        bg="white"
+                        color="black"
+                        display="flex"
+                        gap={2}
+                      >
+                        Get a Ticket <ArrowUpRight size={20} />
+                      </Button>
+
+                      <Button
+                        as="a"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdqUUk4RyNUytAnVlmNqBtd0P358IKZ0bP51-g04cbNnakETw/viewform?usp=header"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        w="100%"
+                        variant="outline"
+                        color="white"
+                        _hover={{ bg: "whiteAlpha.200" }}
+                      >
+                        Become a Sponsor
+                      </Button>
+                    </Flex>
                   </VStack>
                 </DrawerBody>
               </DrawerContent>
