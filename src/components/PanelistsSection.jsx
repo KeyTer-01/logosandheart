@@ -45,8 +45,8 @@ const PanelistsSection = () => {
   return (
     <Box
       w="100%"
-      bg="black"
-      py={{ base: 10, md: 20 }}
+      // bg="black"
+      py={{ base: 16, md: 20 }}
       px={{ base: 4, md: 10 }}
       id="panelists"
     >
@@ -77,7 +77,7 @@ const PanelistsSection = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             whileHover={{
               y: -5,
               boxShadow: "2xl",
@@ -110,6 +110,16 @@ const PanelistsSection = () => {
           </MotionBox>
         ))}
       </SimpleGrid>
+      {/* Overlay */}
+      <Box
+        pos="absolute"
+        top="0"
+        left="0"
+        right="0"
+        bottom="0"
+        bg="blackAlpha.800"
+        zIndex={-1}
+      />
     </Box>
   );
 };

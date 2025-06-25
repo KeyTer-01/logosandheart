@@ -3,8 +3,8 @@ import silhouette from "../assets/images/silhouette-square.jpg";
 
 const GuestSpeakerSection = () => (
   <Box id="speakers" py={16} px={{ base: 4, md: 10 }} bg="gray.50">
-    <Heading textAlign="center" mb={10} fontSize={{ base: "2xl", md: "4xl" }}>
-      Guest Speaker
+    <Heading textAlign="center" mb={10} fontSize={{ base: "3xl", md: "7xl" }}>
+      Keynote Speaker
     </Heading>
     <Stack
       direction={{ base: "column", md: "row" }}

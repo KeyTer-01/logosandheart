@@ -5,57 +5,52 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Link,
   Text,
   useColorModeValue,
+  VStack,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  Button,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { useEffect } from "react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Story", href: "#story" },
   { label: "Panelists", href: "#panelists" },
   { label: "Speakers", href: "#speakers" },
-  { label: "Expectations", href: "#expect" },
-  { label: "Goal", href: "#goal" },
-  { label: "Details", href: "#details" },
-  { label: "Register", href: "#cta" },
-  { label: "Contact", href: "#contact" },
+  // { label: "Expectations", href: "#expect" },
+  // { label: "Goal", href: "#goal" },
+  // { label: "Details", href: "#details" },
+  // { label: "Register", href: "#cta" },
+  // { label: "Contact", href: "#contact" },
 ];
-
-const NavLink = ({ href, children }) => (
-  <Link
-    px={3}
-    py={2}
-    rounded="md"
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={href}
-    fontWeight="medium"
-    fontSize="sm"
-  >
-    {children}
-  </Link>
-);
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  const handleScroll = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    onClose();
+  };
 
   return (
-    <Box
-      position="fixed"
-      top="0"
-      width="100%"
-      bg="blackAlpha.800"
-      zIndex="1000"
-    >
+    <Box position="fixed" top="0" width="100%" zIndex="1000">
       <Flex
-        h={16}
+        h="16"
         alignItems="center"
         justifyContent="space-between"
         px={{ base: 4, md: 8 }}
+        bg="blackAlpha.800"
         maxW="7xl"
         mx="auto"
       >
@@ -64,42 +59,67 @@ const Navbar = () => {
           <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
         </Text>
 
-        <IconButton
-          size="md"
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label="Toggle Navigation"
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-          color="white"
-          bg="transparent"
-          _hover={{ bg: "whiteAlpha.200" }}
-        />
+        {isMobile ? (
+          <>
+            <IconButton
+              size="md"
+              icon={<HamburgerIcon />}
+              aria-label="Toggle Navigation"
+              onClick={onOpen}
+              color="white"
+              bg="transparent"
+              _hover={{ bg: "whiteAlpha.200" }}
+            />
 
-        <HStack
-          spacing={4}
-          display={{ base: "none", md: "flex" }}
-          color={"white"}
-        >
-          {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>
-              {link.label}
-            </NavLink>
-          ))}
-        </HStack>
-      </Flex>
-
-      {/* Mobile Menu */}
-      {isOpen ? (
-        <Box pb={4} display={{ md: "none" }} bg="blackAlpha.900">
-          <Stack as="nav" spacing={2} px={4}>
+            <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+              <DrawerOverlay />
+              <DrawerContent
+                bg="transparent"
+                backdropFilter="blur(10px)"
+                maxW="250px"
+              >
+                <DrawerCloseButton color="white" />
+                <DrawerBody pt={16}>
+                  <VStack spacing={2} align="flex-start">
+                    {navLinks.map((link) => (
+                      <Button
+                        key={link.href}
+                        variant="ghost"
+                        color="white"
+                        size="lg"
+                        justifyContent="flex-start"
+                        onClick={() => handleScroll(link.href)}
+                        _hover={{ color: "purple.400", bg: "whiteAlpha.100" }}
+                      >
+                        {link.label}
+                      </Button>
+                    ))}
+                  </VStack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </>
+        ) : (
+          <HStack spacing={2} color="white">
             {navLinks.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+              <Button
+                key={link.href}
+                variant="ghost"
+                color="white"
+                onClick={() => handleScroll(link.href)}
+                _hover={{
+                  color: "purple.400",
+                  bg: "whiteAlpha.100",
+                }}
+                fontWeight="medium"
+                fontSize="sm"
+              >
                 {link.label}
-              </NavLink>
+              </Button>
             ))}
-          </Stack>
-        </Box>
-      ) : null}
+          </HStack>
+        )}
+      </Flex>
     </Box>
   );
 };
