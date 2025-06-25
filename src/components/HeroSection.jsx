@@ -15,8 +15,8 @@ const MotionFlex = motion(Flex);
 
 const HeroSection = () => {
   const iconSize = useBreakpointValue({ base: 18, md: 24 });
-  const fontSize = useBreakpointValue({ base: "sm", md: "lg" });
-  const gap = useBreakpointValue({ base: 2, md: 3 });
+  const fontSize = useBreakpointValue({ base: "sm", md: "sm", lg: "lg" });
+  const gap = useBreakpointValue({ base: 2, md: 2, lg: 3 });
   const px = useBreakpointValue({ base: 4, md: 6 });
   const py = useBreakpointValue({ base: 2, md: 3 });
 
@@ -101,8 +101,8 @@ const HeroSection = () => {
         zIndex={10}
         textAlign="center"
         color="white"
-        px={4}
-        pt={24}
+        px={8}
+        py={24}
         maxW="6xl"
         mx="auto"
         align="center"
@@ -131,7 +131,7 @@ const HeroSection = () => {
           lineHeight="tall"
         >
           A faith-based exhibition that transcends a mere event, it is a
-          revelation of faith. This year&apos;s theme is:
+          revelation of faith. <br /> This year&apos;s theme is:
         </Text>
         <Text
           fontSize={{ base: "2xl", md: "3xl" }}
