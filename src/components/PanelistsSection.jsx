@@ -62,10 +62,10 @@ const PanelistsSection = () => {
           <MotionBox
             key={index}
             bg="white"
-            borderRadius="2xl"
+            // borderRadius="2xl"
             boxShadow="lg"
             p={6}
-            py={8}
+            // py={8}
             w="240px"
             textAlign="center"
             initial={{ opacity: 0, y: 40 }}
@@ -81,12 +81,9 @@ const PanelistsSection = () => {
             <Image
               src={panelist.image}
               alt="Coming Soon"
-              boxSize="150px"
+              boxSize="200px"
               mx="auto"
               mb={4}
-              border="4px solid"
-              borderColor="teal.200"
-              borderRadius="full"
               sx={
                 isLargerThan768
                   ? {

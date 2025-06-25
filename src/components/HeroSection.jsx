@@ -1,4 +1,5 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import bgImage from "../assets/images/dark-bg.jpg";
 
 const HeroSection = () => {
   return (
@@ -13,7 +14,21 @@ const HeroSection = () => {
         justifyContent={"center"}
         alignItems={{ base: "flex-start", md: "center" }}
         gap={4}
+        overflow="hidden"
+        bgImage={`url(${bgImage})`}
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        zIndex={-1}
       >
+        {/* Overlay */}
+        <Box
+          pos="absolute"
+          inset="0"
+          bg="blackAlpha.800"
+          opacity={0.9}
+          zIndex={-1}
+        />
         <Text fontSize={{ base: "4xl", md: "7xl" }} fontWeight={700}>
           LOGOS & he
           <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
