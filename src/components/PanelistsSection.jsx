@@ -1,10 +1,10 @@
 import {
   Box,
-  Flex,
   Image,
   Text,
   Heading,
   useMediaQuery,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import silhouette from "../assets/images/silhouette-square.jpg";
@@ -27,6 +27,16 @@ const panelists = [
     title: "Coming Soon",
     image: silhouette,
   },
+  // {
+  //   name: "Coming Soon",
+  //   title: "Coming Soon",
+  //   image: silhouette,
+  // },
+  // {
+  //   name: "Coming Soon",
+  //   title: "Coming Soon",
+  //   image: silhouette,
+  // },
 ];
 
 const PanelistsSection = () => {
@@ -35,8 +45,7 @@ const PanelistsSection = () => {
   return (
     <Box
       w="100%"
-      // bgGradient="linear(to-r, white, gray.50)"
-      bg={"black"}
+      bg="black"
       py={{ base: 10, md: 20 }}
       px={{ base: 4, md: 10 }}
       id="panelists"
@@ -51,32 +60,29 @@ const PanelistsSection = () => {
         Meet The Panelists
       </Heading>
 
-      <Flex
-        direction={{ base: "column", md: "row" }}
-        justify="center"
-        align="center"
-        gap={8}
-        flexWrap="wrap"
+      <SimpleGrid
+        columns={{ base: 2, md: 3 }}
+        spacing={4}
+        justifyContent="center"
+        alignItems={"center"}
       >
         {panelists.map((panelist, index) => (
           <MotionBox
             key={index}
-            bg="white"
-            // borderRadius="2xl"
+            // bg="white"
             boxShadow="lg"
-            p={6}
-            // py={8}
-            w="240px"
-            textAlign="center"
+            // p={6}
+            w="100%"
+            // maxW="240px"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            // animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
             whileHover={{
               y: -5,
               boxShadow: "2xl",
             }}
+            textAlign={{ base: "left", md: "center" }}
           >
             <Image
               src={panelist.image}
@@ -84,6 +90,7 @@ const PanelistsSection = () => {
               boxSize="200px"
               mx="auto"
               mb={4}
+              border={"1px solid #fff"}
               sx={
                 isLargerThan768
                   ? {
@@ -94,15 +101,15 @@ const PanelistsSection = () => {
                   : {}
               }
             />
-            <Text fontWeight="bold" fontSize="lg" color="gray.800">
+            <Text fontWeight="bold" fontSize="lg" color="white">
               {panelist.name}
             </Text>
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize="sm" color="gray.600">
               {panelist.title}
             </Text>
           </MotionBox>
         ))}
-      </Flex>
+      </SimpleGrid>
     </Box>
   );
 };
