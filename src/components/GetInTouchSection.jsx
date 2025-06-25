@@ -8,7 +8,7 @@ const contacts = [
 ];
 
 const GetInTouchSection = () => (
-  <Box py={16} px={6} bg="gray.900" color="white">
+  <Box id="contact" py={16} px={6} bg="gray.900" color="white">
     <Heading mb={6} textAlign="center" fontSize={{ base: "2xl", md: "4xl" }}>
       Get In Touch
     </Heading>

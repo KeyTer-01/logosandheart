@@ -31,6 +31,7 @@ const WhatToExpectSection = () => {
   return (
     <Box
       as="section"
+      id="expect"
       position="relative"
       bg="white"
       color="gray.800"

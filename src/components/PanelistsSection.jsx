@@ -39,6 +39,7 @@ const PanelistsSection = () => {
       bg={"black"}
       py={{ base: 10, md: 20 }}
       px={{ base: 4, md: 10 }}
+      id="panelists"
     >
       <Heading
         textAlign="center"

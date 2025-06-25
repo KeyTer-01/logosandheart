@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Button } from "@chakra-ui/react";
 
 const CTAsSection = () => (
-  <Box py={16} px={6} bg="gray.50" textAlign="center">
+  <Box id="cta" py={16} px={6} bg="gray.50" textAlign="center">
     <Heading mb={8} fontSize={{ base: "2xl", md: "4xl" }}>
       Get Involved
     </Heading>

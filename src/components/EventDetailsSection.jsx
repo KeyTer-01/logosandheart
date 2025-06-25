@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 
 const EventDetailsSection = () => (
-  <Box py={16} px={6} bg="white">
+  <Box id="details" py={16} px={6} bg="white">
     <Heading textAlign="center" mb={10} fontSize={{ base: "2xl", md: "4xl" }}>
       Event Details
     </Heading>

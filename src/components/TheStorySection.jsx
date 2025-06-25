@@ -40,6 +40,7 @@ const TheStorySection = () => {
     <Box
       as="section"
       pos="relative"
+      id="story"
       // bg="black"
       color="black"
       px={{ base: 4, md: 10 }}

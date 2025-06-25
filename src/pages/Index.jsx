@@ -8,10 +8,12 @@ import TheGoalSection from "../components/TheGoalSection";
 import EventDetailsSection from "../components/EventDetailsSection";
 import CTAsSection from "../components/CTAsSection";
 import GetInTouchSection from "../components/GetInTouchSection";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
   return (
     <Flex minH="100vh" position="relative" flexDirection="column">
+      <Navbar />
       <HeroSection />
       <TheStorySection />
       <PanelistsSection />
