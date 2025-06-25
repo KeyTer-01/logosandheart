@@ -144,7 +144,7 @@ const HeroSection = () => {
               lineHeight="1.1"
               color="white"
             >
-              <span style={{ color: "grey" }}>LOGOS</span> & He
+              <span style={{ color: "grey" }}>LOGOS</span> & he
               <span style={{ color: "red", fontStyle: "italic" }}>Art</span>
             </Heading>
             <Heart size={40} color="red" className="animate-pulse" />
