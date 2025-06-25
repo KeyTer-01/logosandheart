@@ -41,7 +41,7 @@ const TheStorySection = () => {
       as="section"
       pos="relative"
       id="story"
-      // bg="black"
+      bg="white"
       color="black"
       px={{ base: 4, md: 10 }}
       py={{ base: 20, md: 28 }}
