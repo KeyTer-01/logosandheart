@@ -13,9 +13,9 @@ const Index = () => {
   return (
     <Flex minH="100vh" position="relative" flexDirection="column">
       <HeroSection />
+      <TheStorySection />
       <PanelistsSection />
       <GuestSpeakerSection />
-      <TheStorySection />
       <WhatToExpectSection />
       <TheGoalSection />
       <EventDetailsSection />

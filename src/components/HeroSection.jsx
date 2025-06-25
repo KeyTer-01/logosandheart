@@ -137,7 +137,7 @@ const HeroSection = () => {
           fontSize={{ base: "2xl", md: "3xl" }}
           mb={8}
           color="gray.100"
-          fontWeight="light"
+          fontWeight="bold"
         >
           FAITH WILL SAVE US
         </Text>
