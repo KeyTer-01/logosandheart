@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import bgImage from "../assets/images/dark-bg.jpg";
 import { ArrowUpRight } from "lucide-react";
 
@@ -23,6 +23,7 @@ const HeroSection = () => {
         bgRepeat="no-repeat"
         zIndex={-1}
       />
+
       <Flex
         pos="relative"
         id="home"
@@ -46,6 +47,26 @@ const HeroSection = () => {
           bottom="0"
           bg="blackAlpha.800"
           zIndex={0}
+        /> */}
+
+        {/* The Image at the bottom */}
+        {/* <Flex
+          pos="absolute"
+          // bg="black"
+          minH="100vh"
+          w="100%"
+          color="white"
+          flexDirection={{ base: "column" }}
+          p={8}
+          justifyContent="center"
+          alignItems={{ base: "flex-start", md: "center" }}
+          gap={4}
+          overflow="hidden"
+          bgImage={`url(${downImage})`}
+          bgSize="cover"
+          bgPosition="center"
+          bgRepeat="no-repeat"
+          zIndex={2}
         /> */}
 
         <Text
@@ -77,6 +98,7 @@ const HeroSection = () => {
             color="black"
             display="flex"
             gap={2}
+            py={6}
           >
             Get a Ticket <ArrowUpRight size={20} />
           </Button>
@@ -90,23 +112,23 @@ const HeroSection = () => {
             variant="outline"
             color="white"
             _hover={{ bg: "whiteAlpha.200" }}
+            py={6}
           >
             Become a Sponsor
           </Button>
         </Flex>
 
-        <Box>
+        <Flex flexDirection={"column"} alignItems={"center"}>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
             mb={2}
             color="gray.300"
-            w={{ base: "100%", md: "50%" }}
+            w={{ base: "100%", md: "60%" }}
             textAlign={{ base: "left", md: "center" }}
             zIndex={1}
           >
             LOGOS & heART 1.0 is a faith-based exhibition that transcends a mere
-            event, it is a revelation of faith. <br /> This year&apos;s theme
-            is:
+            event, it is a revelation of faith. This year&apos;s theme is:
           </Text>
 
           <Text
@@ -122,7 +144,7 @@ const HeroSection = () => {
           >
             FAITH WILL SAVE US
           </Text>
-        </Box>
+        </Flex>
       </Flex>
     </>
   );
