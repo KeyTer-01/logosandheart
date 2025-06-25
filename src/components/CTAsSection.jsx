@@ -11,9 +11,15 @@ const CTAsSection = () => (
       justify="center"
     >
       <CTAButton label="Register Now" link="https://linktr.ee/logosandheart" />
-      <CTAButton label="Become a Vendor" link="#" />
-      <CTAButton label="Volunteer" link="#" />
-      <CTAButton label="Call for Artists" link="#" />
+      <CTAButton
+        label="Become a Vendor"
+        link="https://linktr.ee/logosandheart"
+      />
+      <CTAButton label="Volunteer" link="https://linktr.ee/logosandheart" />
+      <CTAButton
+        label="Call for Artists"
+        link="https://linktr.ee/logosandheart"
+      />
     </Stack>
   </Box>
 );
