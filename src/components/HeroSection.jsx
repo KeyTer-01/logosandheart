@@ -1,4 +1,12 @@
-import { Box, Flex, Text, Heading, Stack, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Heading,
+  Stack,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { Calendar, MapPin, Users, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -6,6 +14,12 @@ const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 
 const HeroSection = () => {
+  const iconSize = useBreakpointValue({ base: 18, md: 24 });
+  const fontSize = useBreakpointValue({ base: "sm", md: "lg" });
+  const gap = useBreakpointValue({ base: 2, md: 3 });
+  const px = useBreakpointValue({ base: 4, md: 6 });
+  const py = useBreakpointValue({ base: 2, md: 3 });
+
   return (
     <Box
       as="section"
@@ -26,7 +40,7 @@ const HeroSection = () => {
           bg="red.500"
           rounded="full"
           filter="blur(60px)"
-          animate={{ opacity: [0.8, 0.4, 0.8] }}
+          animate={{ opacity: [0, 0.8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
         <MotionBox
@@ -38,7 +52,7 @@ const HeroSection = () => {
           bg="green.500"
           rounded="full"
           filter="blur(60px)"
-          animate={{ opacity: [0.8, 0.4, 0.8] }}
+          animate={{ opacity: [0, 0.6, 0] }}
           transition={{ duration: 2, delay: 1, repeat: Infinity }}
         />
         <MotionBox
@@ -51,7 +65,7 @@ const HeroSection = () => {
           bg="yellow.400"
           rounded="full"
           filter="blur(60px)"
-          animate={{ opacity: [0.8, 0.4, 0.8] }}
+          animate={{ opacity: [0, 0.4, 0] }}
           transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
         />
       </Box>
@@ -88,7 +102,7 @@ const HeroSection = () => {
         textAlign="center"
         color="white"
         px={4}
-        py={20}
+        pt={24}
         maxW="6xl"
         mx="auto"
         align="center"
@@ -102,93 +116,99 @@ const HeroSection = () => {
             fontWeight="bold"
             mx={4}
           >
-            Logos & HeArt
+            <span style={{ color: "grey" }}>LOGOS</span> & He
+            <span style={{ color: "red", fontStyle: "italic" }}>Art</span>
           </Heading>
           <Heart size={40} color="red" className="animate-pulse" />
         </Flex>
 
         <Text
-          fontSize={{ base: "2xl", md: "3xl" }}
-          mb={4}
-          color="gray.300"
-          fontWeight="light"
-        >
-          Where Faith Meets Creativity
-        </Text>
-
-        <Text
           fontSize={{ base: "lg", md: "xl" }}
-          mb={10}
+          mb={2}
           color="gray.400"
           maxW="3xl"
           mx="auto"
           lineHeight="tall"
         >
-          An extraordinary fusion of spiritual expression and artistic
-          innovation. Join us for an inspiring journey through music, visual
-          arts, spoken word, and divine connection.
+          A faith-based exhibition that transcends a mere event, it is a
+          revelation of faith. This year&apos;s theme is:
+        </Text>
+        <Text
+          fontSize={{ base: "2xl", md: "3xl" }}
+          mb={8}
+          color="gray.100"
+          fontWeight="light"
+        >
+          FAITH WILL SAVE US
         </Text>
 
+        {/* Updated Info Section */}
         <Stack
           direction={{ base: "column", md: "row" }}
-          spacing={8}
-          mb={12}
+          spacing={{ base: 4, md: 8 }}
+          mb={{ base: 8, md: 12 }}
           align="center"
           justify="center"
-          fontSize="lg"
+          fontSize={fontSize}
         >
           <Flex
             align="center"
-            gap={3}
-            px={6}
-            py={3}
+            gap={gap}
+            px={px}
+            py={py}
             border="1px solid"
             borderColor="red.500"
             rounded="full"
             backdropFilter="blur(6px)"
             bg="whiteAlpha.100"
           >
-            <Calendar color="red" size={24} />
-            <span>Coming Soon</span>
+            <Calendar color="red" size={iconSize} />
+            <span>October 11, 2025 — 11AM</span>
           </Flex>
 
           <Flex
             align="center"
-            gap={3}
-            px={6}
-            py={3}
+            gap={gap}
+            px={px}
+            py={py}
             border="1px solid"
             borderColor="green.500"
             rounded="full"
             backdropFilter="blur(6px)"
             bg="whiteAlpha.100"
           >
-            <MapPin color="green" size={24} />
-            <span>Lagos, Nigeria</span>
+            <MapPin color="green" size={iconSize} />
+            <span>Solution Arena, Lagos</span>
           </Flex>
 
           <Flex
             align="center"
-            gap={3}
-            px={6}
-            py={3}
+            gap={gap}
+            px={px}
+            py={py}
             border="1px solid"
             borderColor="yellow.400"
             rounded="full"
             backdropFilter="blur(6px)"
             bg="whiteAlpha.100"
           >
-            <Users color="gold" size={24} />
-            <span>Faith Community</span>
+            <Users color="gold" size={iconSize} />
+            <span>Christian Creatives</span>
           </Flex>
         </Stack>
 
+        {/* CTA Buttons */}
         <Stack
           direction={{ base: "column", sm: "row" }}
           spacing={6}
+          mt={8}
           justify="center"
         >
           <Button
+            as="a"
+            href="https://linktr.ee/logosandheart"
+            target="_blank"
+            rel="noopener noreferrer"
             size="lg"
             colorScheme="red"
             px={10}
@@ -199,7 +219,7 @@ const HeroSection = () => {
             _hover={{ transform: "scale(1.05)" }}
             transition="all 0.3s"
           >
-            Join the Experience
+            Register / Showcase
           </Button>
           <Button
             size="lg"
