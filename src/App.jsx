@@ -4,6 +4,15 @@ import Index from "./pages/Index";
 // import NotFound from "./pages/NotFound";
 import theme from "./theme";
 // const queryClient = new QueryClient();
+import "@fontsource/big-shoulders-display/100.css";
+import "@fontsource/big-shoulders-display/200.css";
+import "@fontsource/big-shoulders-display/300.css";
+import "@fontsource/big-shoulders-display/400.css";
+import "@fontsource/big-shoulders-display/500.css";
+import "@fontsource/big-shoulders-display/600.css";
+import "@fontsource/big-shoulders-display/700.css";
+import "@fontsource/big-shoulders-display/800.css";
+import "@fontsource/big-shoulders-display/900.css";
 
 const App = () => (
   <ChakraProvider theme={theme}>

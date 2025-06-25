@@ -75,7 +75,7 @@ const HeroSection = () => {
 
         <Text
           fontFamily={"secondary"}
-          fontSize={{ base: "6xl", md: "7xl" }}
+          fontSize={{ base: 75, md: "7xl" }}
           fontWeight={700}
           zIndex={1}
           lineHeight={1}
@@ -125,7 +125,7 @@ const HeroSection = () => {
 
         <Flex flexDirection={"column"} alignItems={"center"}>
           <Text
-            fontSize={{ base: "lg", md: "xl" }}
+            fontSize={{ base: "sm", md: "xl" }}
             mb={2}
             color="gray.300"
             w={{ base: "100%", md: "60%" }}
