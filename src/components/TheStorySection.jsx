@@ -143,12 +143,12 @@ const TheStorySection = () => {
             bgGradient={item.bg}
             boxShadow={item.glow}
             p={cardPadding}
-            rounded="2xl"
+            // rounded="2xl"
             textAlign="left"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.3 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             whileHover={{
               y: -6,
               boxShadow: `0 0 50px rgba(255, 255, 255, 0.3)`,
