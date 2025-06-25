@@ -60,8 +60,8 @@ const Navbar = () => {
         mx="auto"
       >
         <Text fontWeight="bold" fontSize="lg" color="white">
-          LOGOS & He
-          <span style={{ color: "red", fontStyle: "italic" }}>Art</span>
+          LOGOS & he
+          <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
         </Text>
 
         <IconButton

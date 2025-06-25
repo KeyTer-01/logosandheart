@@ -16,7 +16,7 @@ const HeroSection = () => {
       >
         <Text fontSize={{ base: "4xl", md: "7xl" }} fontWeight={700}>
           LOGOS & he
-          <span style={{ color: "red", fontStyle: "italic" }}>Art</span>
+          <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
         </Text>
         <Flex
           flexDirection={{ base: "column", md: "row" }}
