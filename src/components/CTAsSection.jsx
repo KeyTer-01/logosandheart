@@ -7,12 +7,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import {
-  UserPlus,
-  ShoppingBag,
-  HeartHandshake,
-  Paintbrush2,
-} from "lucide-react";
+import { ShoppingBag, HeartHandshake, Paintbrush2 } from "lucide-react";
 
 const MotionButton = motion(Button);
 
@@ -68,7 +63,7 @@ const CTAsSection = () => {
         align="center"
         flexWrap="wrap"
       >
-        {ctaItems.map((cta, i) => (
+        {ctaItems.map((cta) => (
           <MotionButton
             key={cta.label}
             as="a"

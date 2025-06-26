@@ -8,17 +8,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import artistImage from "../assets/images/artist-image.png";
+import cfaImage from "../assets/images/cfa.png";
 import { motion } from "framer-motion";
 import { HeartHandshake, Paintbrush2, ShoppingBag } from "lucide-react";
 
 const MotionButton = motion(Button);
+
 const ctaItems = [
-  // {
-  //   label: "Register Now",
-  //   icon: <UserPlus size={20} />,
-  //   link: "https://linktr.ee/logosandheart",
-  //   bg: "#ba0404",
-  // },
   {
     label: "Call for Artists",
     icon: <Paintbrush2 size={20} />,
@@ -38,88 +34,119 @@ const ctaItems = [
     bg: "#ad8a02",
   },
 ];
+
 const CallForArtists = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
-    <>
-      <Flex
-        id="cta"
-        flexDirection={"column"}
+    <Flex
+      id="cta"
+      flexDirection="column"
+      alignItems="center"
+      color="#000"
+      bg="white"
+      px={{ base: 4, md: 8 }}
+      py={{ base: 16, md: 16 }}
+    >
+      {/* <Flex
         alignItems={"center"}
-        color={"#000"}
-        bg={"white"}
-        px={6}
-        py={16}
+        justifyContent={"center"}
+        w={"100%"}
+        gap={1}
       >
-        <Text fontFamily={"secondary"} fontSize={40} fontWeight={700}>
-          Call for Artists
-        </Text>
         <Flex
-          color={"#000"}
-          //   bg={"yellow"}
-          w={"100%"}
-          justifyContent={"center"}
-          minH={"30vh"}
-          gap={2}
+          flex={1}
+          justifyContent={"flex-end"}
           alignItems={"center"}
-          //   px={{ base: 0, md: 24 }}
         >
-          <Stack w={{ base: "80%", md: "30%" }}>
-            <Text
-              mb={2}
-              fontSize={{ base: "sm", md: "lg" }}
-              lineHeight={1.2}
-              color="gray.700"
-            >
-              Join the movement. Be a part of something inspiring — create,
-              connect, and contribute.
-            </Text>
-            <Stack
-              direction={{ base: "column" }}
-              spacing={4}
-              justify="center"
-              //   align="center"
-              flexWrap="wrap"
-              //   w={"100%"}
-              //   bg={"orange"}
-            >
-              {ctaItems.map((cta, i) => (
-                <MotionButton
-                  key={cta.label}
-                  as="a"
-                  href={cta.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="outline"
-                  size="md"
-                  borderColor={cta.bg}
-                  //   px={8}
-                  //   py={6}
-                  leftIcon={cta.icon}
-                  borderRadius="xl"
-                  boxShadow="md"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  minW={isMobile ? "full" : "auto"}
-                  color={cta.bg}
-                >
-                  {cta.label}
-                </MotionButton>
-              ))}
-            </Stack>
-          </Stack>
-          <Box w={{ base: "50%", md: "30%" }}>
-            <Image
-              src={artistImage}
-              alt="artist"
-              w={{ base: "100%", md: "60%" }}
-              objectFit="contain"
-            />
-          </Box>
+          <Text
+            fontSize={{ base: "2xl", md: "4xl" }}
+            fontWeight="bold"
+            textAlign="center"
+          >
+            Call for
+          </Text>
         </Flex>
+        <Box flex={1}>
+          <Image src={cfaImage} alt="cfa" w={{ base: "50%" }} />
+        </Box>
+      </Flex> */}
+
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        justify="center"
+        align="center"
+        w="100%"
+        maxW="1200px"
+        gap={{ base: 10, md: 16 }}
+      >
+        {/* Text and Buttons */}
+        <Stack w={{ base: "100%", md: "45%" }} spacing={6}>
+          <Box>
+            <Text
+              fontSize={{ base: "2xl", md: "4xl" }}
+              fontWeight="bold"
+              // textAlign="center"
+              //   lineHeight={1}
+            >
+              Call for
+            </Text>
+            <Flex alignItems={"center"}>
+              {/* <Box> */}
+              <Image src={cfaImage} alt="cfa" w={{ base: "50%" }} />
+              {/* <Text
+                fontFamily={"secondary"}
+                fontSize={48}
+                fontWeight={600}
+                mb={2}
+              >
+                s
+              </Text> */}
+              {/* </Box> */}
+            </Flex>
+          </Box>
+
+          <Text
+            fontSize={{ base: "sm", md: "lg" }}
+            color="gray.700"
+            lineHeight="1.4"
+          >
+            Join the movement. Be a part of something inspiring — create,
+            connect, and contribute.
+          </Text>
+
+          <Stack spacing={4}>
+            {ctaItems.map((cta) => (
+              <MotionButton
+                key={cta.label}
+                as="a"
+                href={cta.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                size="md"
+                borderColor={cta.bg}
+                leftIcon={cta.icon}
+                borderRadius="xl"
+                boxShadow="md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                minW={isMobile ? "full" : "auto"}
+                color={cta.bg}
+              >
+                {cta.label}
+              </MotionButton>
+            ))}
+          </Stack>
+        </Stack>
+
+        {/* Image */}
+        <Box w={{ base: "80%", md: "20%" }} maxW="400px">
+          <Image src={artistImage} alt="artist" w="100%" objectFit="contain" />
+        </Box>
       </Flex>
-    </>
+    </Flex>
   );
 };
 
