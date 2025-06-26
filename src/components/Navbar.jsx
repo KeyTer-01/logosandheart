@@ -4,9 +4,6 @@ import {
   HStack,
   IconButton,
   useDisclosure,
-  Stack,
-  Text,
-  useColorModeValue,
   VStack,
   Drawer,
   DrawerOverlay,
@@ -15,10 +12,11 @@ import {
   DrawerBody,
   Button,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-// import { useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import logo from "../assets/images/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -51,15 +49,22 @@ const Navbar = () => {
         alignItems="center"
         justifyContent="space-between"
         px={{ base: 4, md: 8 }}
-        bg="blackAlpha.800"
+        bg="blackAlpha.900"
         maxW="7xl"
         mx="auto"
       >
-        <Text fontWeight="bold" fontSize="lg" color="white">
+        {/* <Text fontWeight="bold" fontSize="lg" color="white">
           LOGOS <span style={{ color: "yellow" }}>&</span> he
           <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
-        </Text>
-
+        </Text> */}
+        <Box>
+          <Image
+            src={logo}
+            alt="LOGOS & heART logo"
+            boxSize={["60px", "80px"]}
+            objectFit="contain"
+          />
+        </Box>
         {isMobile ? (
           <>
             <IconButton
