@@ -7,7 +7,7 @@ const EventDetailsSection = () => (
     </Heading>
     <Stack
       spacing={5}
-      textAlign="center"
+      // textAlign="center"
       fontSize="md"
       color="gray.700"
       maxW="2xl"

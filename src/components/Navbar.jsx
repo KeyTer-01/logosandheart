@@ -78,7 +78,7 @@ const Navbar = () => {
             />
 
             <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-              <DrawerOverlay />
+              <DrawerOverlay bg="blackAlpha.800" />
               <DrawerContent
                 bg="transparent"
                 backdropFilter="blur(10px)"

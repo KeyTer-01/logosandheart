@@ -35,7 +35,7 @@ const CTAButton = ({ label, link }) => (
     size="lg"
     px={8}
     py={4}
-    rounded="full"
+    // rounded="full"
     _hover={{ bg: "red.500", color: "white" }}
   >
     {label}

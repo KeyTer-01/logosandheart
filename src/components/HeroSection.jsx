@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
 import bgImage from "../assets/images/bg.png";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -69,21 +69,64 @@ const HeroSection = () => {
           transition={{ duration: 2, repeat: Infinity }}
         />
       </Box>
-
-      <MotionText
-        variants={fadeInUp}
-        fontFamily={"secondary"}
-        fontSize={{ base: 100, md: 140 }}
-        fontWeight={600}
-        zIndex={1}
-        lineHeight={1}
-        letterSpacing={{ base: -6, md: -8 }}
-        mt={24}
-      >
-        <span style={{ color: "#7c7c7c" }}>LOGOS</span>{" "}
-        <span style={{ color: "#ffcb04", fontSize: 70 }}>&</span> he
-        <span style={{ color: "#ea0606", fontStyle: "italic" }}>ART</span>
-      </MotionText>
+      <Stack>
+        <MotionText
+          variants={fadeInUp}
+          fontFamily={"secondary"}
+          fontSize={{ base: 100, md: 140 }}
+          fontWeight={800}
+          zIndex={1}
+          lineHeight={0.8}
+          letterSpacing={{ base: -5, md: -8 }}
+          mt={16}
+          position={"relative"}
+        >
+          <span style={{ color: "#7c7c7c" }}>LOGOS</span>{" "}
+          <span
+            style={{
+              color: "#ffcb04",
+              fontSize: 40,
+              position: "absolute",
+              left: "38%",
+              top: "44%",
+            }}
+          >
+            &
+          </span>{" "}
+          <br />
+          he
+          <span
+            style={{ color: "#ea0606", fontStyle: "italic", marginLeft: -4 }}
+          >
+            ART
+          </span>
+        </MotionText>
+        <MotionText
+          variants={fadeInUp}
+          zIndex={1}
+          mt={0}
+          backgroundColor="#ffcb04"
+          px={2}
+          ml={1}
+          w={"90%"}
+          // fontFamily={"tertiary"}
+        >
+          {/* <span style={{ textTransform: "capitalize", color: "#7c7c7c" }}>
+            Theme:{" "}
+          </span> */}
+          <span
+            style={{
+              // fontFamily: "tertiary",
+              textTransform: "capitalize",
+              color: "#000",
+              fontWeight: 600,
+              // fontSize: 40,
+            }}
+          >
+            Faith will save us
+          </span>
+        </MotionText>
+      </Stack>
 
       <MotionFlex
         variants={fadeInUp}
@@ -105,7 +148,7 @@ const HeroSection = () => {
           display="flex"
           gap={2}
           // py={6}
-          boxShadow="0 0 2px #ffcb04, 0 0 8px #ffcb04"
+          // boxShadow="0 0 2px #ffcb04, 0 0 8px #ffcb04"
           _hover={{
             boxShadow: "0 0 5px #ffcb04, 0 0 10px #ffcb04",
             transform: "scale(1.05)",
@@ -125,7 +168,7 @@ const HeroSection = () => {
           variant="outline"
           color="white"
           _hover={{ bg: "whiteAlpha.200" }}
-          py={6}
+          // py={6}
         >
           Become a Sponsor
         </Button>
@@ -144,11 +187,28 @@ const HeroSection = () => {
           color="gray.300"
           w={{ base: "100%", md: "60%" }}
         >
-          LOGOS & heART 1.0 is a faith-based exhibition that transcends a mere
-          event, it is a revelation of faith. This year&apos;s theme is:
+          LOGOS & heART is where the Word meets creativity. An immersive
+          faith-based art experience that brings Scripture to life through Arts,
+          visual storytelling, music, performance, and conversation. At its
+          heart, it&apos;s a call to live by faith — to see, feel, and believe
+          again. Welcome to LOGOS & heART 1.0 <br />
+          <span style={{ textTransform: "capitalize", color: "#7c7c7c" }}>
+            Theme:{" "}
+          </span>
+          <span
+            style={{
+              // fontFamily: "Big Shoulders Display",
+              textTransform: "capitalize",
+              color: "#ffcb04",
+              fontWeight: 500,
+              // fontSize: 40,
+            }}
+          >
+            Faith will save us
+          </span>
         </Text>
 
-        <Text
+        {/* <Text
           fontSize={{ base: "4xl", md: "4xl" }}
           mb={8}
           color="yellow.400"
@@ -158,7 +218,7 @@ const HeroSection = () => {
           textTransform={"capitalize"}
         >
           Faith will save us
-        </Text>
+        </Text> */}
       </MotionFlex>
     </Flex>
   );
