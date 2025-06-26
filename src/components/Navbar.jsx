@@ -20,13 +20,13 @@ import logo from "../assets/images/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "CFA", href: "#cta" },
   { label: "Story", href: "#story" },
   { label: "Panelists", href: "#panelists" },
   { label: "Speakers", href: "#speakers" },
   { label: "Expectations", href: "#expect" },
   { label: "Goal", href: "#goal" },
   { label: "Details", href: "#details" },
-  { label: "Register", href: "#cta" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -97,11 +97,11 @@ const Navbar = () => {
                         p={0}
                         borderRadius={0}
                         w={"100%"}
-                        mt={3}
+                        mt={4}
                         h={8}
                         pb={1}
                         // bg={"yellow"}
-                        borderBottom={"0.2px solid #ffffff6a"}
+                        borderBottom={"0.2px solid #ffffff4a"}
                         justifyContent="flex-start"
                         onClick={() => handleScroll(link.href)}
                         _hover={{ color: "purple.400", bg: "whiteAlpha.100" }}

@@ -24,7 +24,7 @@ const Index = () => {
       <WhatToExpectSection />
       <TheGoalSection />
       <EventDetailsSection />
-      <CTAsSection />
+      {/* <CTAsSection /> */}
       <GetInTouchSection />
     </Flex>
   );
