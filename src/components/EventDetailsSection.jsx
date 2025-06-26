@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 
 const EventDetailsSection = () => (
-  <Box id="details" py={16} px={6} bg="white">
+  <Box id="details" py={12} px={6} bg="white">
     <Heading textAlign="center" mb={10} fontSize={{ base: "2xl", md: "4xl" }}>
       Event Details
     </Heading>
@@ -25,10 +25,10 @@ const EventDetailsSection = () => (
       <Text>
         📧 <strong>Email:</strong> logosheart144@gmail.com
       </Text>
-      <Text>
+      {/* <Text>
         This event is both spiritual and cultural — deeply intentional, deeply
         creative, and deeply transformative.
-      </Text>
+      </Text> */}
     </Stack>
   </Box>
 );

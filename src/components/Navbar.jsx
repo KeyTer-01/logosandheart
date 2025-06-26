@@ -24,10 +24,10 @@ const navLinks = [
   { label: "Panelists", href: "#panelists" },
   { label: "Speakers", href: "#speakers" },
   { label: "Expectations", href: "#expect" },
-  // { label: "Goal", href: "#goal" },
-  // { label: "Details", href: "#details" },
-  // { label: "Register", href: "#cta" },
-  // { label: "Contact", href: "#contact" },
+  { label: "Goal", href: "#goal" },
+  { label: "Details", href: "#details" },
+  { label: "Register", href: "#cta" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -86,13 +86,22 @@ const Navbar = () => {
               >
                 <DrawerCloseButton color="white" />
                 <DrawerBody pt={16}>
-                  <VStack spacing={2} align="flex-start">
+                  <VStack spacing={0} align="flex-start">
                     {navLinks.map((link) => (
                       <Button
                         key={link.href}
                         variant="ghost"
                         color="white"
                         size="lg"
+                        fontWeight={300}
+                        p={0}
+                        borderRadius={0}
+                        w={"100%"}
+                        mt={3}
+                        h={8}
+                        pb={1}
+                        // bg={"yellow"}
+                        borderBottom={"0.2px solid #ffffff6a"}
                         justifyContent="flex-start"
                         onClick={() => handleScroll(link.href)}
                         _hover={{ color: "purple.400", bg: "whiteAlpha.100" }}
@@ -106,6 +115,7 @@ const Navbar = () => {
                       gap={4}
                       alignItems={{ base: "flex-start" }}
                       zIndex={1}
+                      mt={6}
                     >
                       <Button
                         as="a"
