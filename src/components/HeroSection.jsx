@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
-import bgImage from "../assets/images/bg.png";
+import bgImage from "../assets/images/dark-bg.jpg";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
         left="0"
         right="0"
         bottom="0"
-        bg="blackAlpha.600"
+        bg="blackAlpha.800"
         zIndex={0}
       />
 
@@ -66,7 +66,7 @@ const HeroSection = () => {
           rounded="full"
           filter="blur(60px)"
           animate={{ opacity: [0, 0.6, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 5, repeat: Infinity }}
         />
       </Box>
       <Stack>
@@ -100,6 +100,16 @@ const HeroSection = () => {
           >
             ART
           </span>
+          <span
+            style={{
+              fontSize: 16,
+              letterSpacing: 1,
+              ml: 2,
+              fontStyle: "italic",
+            }}
+          >
+            1.0
+          </span>
         </MotionText>
         <MotionText
           variants={fadeInUp}
@@ -108,7 +118,7 @@ const HeroSection = () => {
           backgroundColor="#ffcb04"
           px={2}
           ml={1}
-          w={"90%"}
+          w={"85%"}
           // fontFamily={"tertiary"}
         >
           {/* <span style={{ textTransform: "capitalize", color: "#7c7c7c" }}>
@@ -131,7 +141,7 @@ const HeroSection = () => {
       <MotionFlex
         variants={fadeInUp}
         flexDirection={{ base: "column", md: "row" }}
-        width={{ base: "100%", md: "50%" }}
+        width={{ base: "100%", md: "40%" }}
         gap={4}
         alignItems={{ base: "flex-start" }}
         zIndex={1}
@@ -168,6 +178,7 @@ const HeroSection = () => {
           variant="outline"
           color="white"
           _hover={{ bg: "whiteAlpha.200" }}
+          bg="blackAlpha.600"
           // py={6}
         >
           Become a Sponsor
@@ -182,10 +193,10 @@ const HeroSection = () => {
         textAlign={{ base: "left", md: "center" }}
       >
         <Text
-          fontSize={{ base: "sm", md: "xl" }}
+          fontSize={{ base: "sm", md: "md" }}
           mb={2}
           color="gray.300"
-          w={{ base: "100%", md: "60%" }}
+          w={{ base: "100%", md: "42%" }}
         >
           LOGOS & heART is where the Word meets creativity. An immersive
           faith-based art experience that brings Scripture to life through Arts,

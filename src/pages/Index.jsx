@@ -10,12 +10,14 @@ import CTAsSection from "../components/CTAsSection";
 import GetInTouchSection from "../components/GetInTouchSection";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import CallForArtists from "../components/CallForArtists";
 
 const Index = () => {
   return (
     <Flex minH="100vh" position="relative" flexDirection="column">
       <Navbar />
       <HeroSection />
+      <CallForArtists />
       <TheStorySection />
       <PanelistsSection />
       <GuestSpeakerSection />

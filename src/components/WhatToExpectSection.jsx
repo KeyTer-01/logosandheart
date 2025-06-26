@@ -97,7 +97,7 @@ const WhatToExpectSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.15 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <Icon as={Sparkles} color="red.400" boxSize={iconSize} mt={1} />
             {item}
