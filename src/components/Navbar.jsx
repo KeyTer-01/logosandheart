@@ -50,7 +50,7 @@ const Navbar = () => {
         justifyContent="space-between"
         px={{ base: 4, md: 8 }}
         bg="blackAlpha.900"
-        maxW="7xl"
+        // maxW="7xl"
         mx="auto"
       >
         {/* <Text fontWeight="bold" fontSize="lg" color="white">
