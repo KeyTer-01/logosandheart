@@ -47,7 +47,7 @@ const TheStorySection = () => {
       bg="white"
       color="black"
       px={{ base: 4, md: 10 }}
-      pb={{ base: 0, md: 20 }}
+      pb={{ base: 0, md: 0 }}
       pt={{ base: 16, md: 28 }}
       overflow="hidden"
     >

@@ -1,8 +1,13 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
 const TheGoalSection = () => (
-  <Box id="goal" py={16} px={{ base: 4, md: 10 }} bg="gray.100">
-    <Heading textAlign="center" mb={6} fontSize={{ base: "2xl", md: "4xl" }}>
+  <Box id="goal" py={16} px={{ base: 4, md: 10 }} bg="#ffcb04">
+    <Heading
+      fontFamily={"secondary"}
+      textAlign="center"
+      mb={6}
+      fontSize={{ base: "4xl", md: "5xl" }}
+    >
       Our Goal
     </Heading>
     <Text

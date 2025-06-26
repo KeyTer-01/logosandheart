@@ -16,7 +16,7 @@ const MotionButton = motion(Button);
 
 const ctaItems = [
   {
-    label: "Call for Artists",
+    label: "Come as an Artist",
     icon: <Paintbrush2 size={20} />,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdG7eZ2xdwg0dOMX8DBpDeGwu1dPX2unUWoaxbkQGkBWWaLow/viewform?usp=header",
     bg: "#ba0404",

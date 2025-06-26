@@ -54,7 +54,7 @@ const PanelistsSection = () => {
         fontFamily={"secondary"}
         textAlign="center"
         mb={10}
-        fontSize={{ base: "2xl", md: "4xl" }}
+        fontSize={{ base: "3xl", md: "5xl" }}
         fontWeight="bold"
         color="yellow.400"
       >

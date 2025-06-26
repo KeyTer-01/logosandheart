@@ -72,9 +72,10 @@ const WhatToExpectSection = () => {
       {/* Section Heading */}
       <Box textAlign="center" mb={12} pos="relative" zIndex={2}>
         <Heading
-          fontSize={{ base: "3xl", md: "5xl" }}
+          fontSize={{ base: "4xl", md: "5xl" }}
           fontWeight="bold"
           color="gray.800"
+          fontFamily={"secondary"}
         >
           What to Expect
         </Heading>
