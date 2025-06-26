@@ -47,7 +47,8 @@ const TheStorySection = () => {
       bg="white"
       color="black"
       px={{ base: 4, md: 10 }}
-      py={{ base: 20, md: 28 }}
+      pb={{ base: 0, md: 20 }}
+      pt={{ base: 16, md: 28 }}
       overflow="hidden"
     >
       {/* Title and Subtitle */}

@@ -20,8 +20,8 @@ import logo from "../assets/images/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "CFA", href: "#cta" },
   { label: "Story", href: "#story" },
+  { label: "CFA", href: "#cta" },
   { label: "Panelists", href: "#panelists" },
   { label: "Speakers", href: "#speakers" },
   { label: "Expectations", href: "#expect" },
