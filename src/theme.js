@@ -43,8 +43,8 @@ const theme = extendTheme({
   fonts: {
     heading: "'Poppins', sans-serif",
     body: "'Inter', sans-serif",
-    secondary: "'Big Shoulders Display', cursive",
-    tertiary: "cursive",
+    secondary: "'Big Shoulders Display', sans-serif",
+    tertiary: "'Cursive', cursive",
   },
 });
 

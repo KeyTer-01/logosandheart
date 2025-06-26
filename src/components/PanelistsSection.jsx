@@ -84,6 +84,7 @@ const PanelistsSection = () => {
               boxShadow: "2xl",
             }}
             textAlign={{ base: "left", md: "center" }}
+            pb={4}
           >
             <Image
               src={panelist.image}
@@ -118,7 +119,7 @@ const PanelistsSection = () => {
         left="0"
         right="0"
         bottom="0"
-        bg="blackAlpha.800"
+        bg="blackAlpha.900"
         zIndex={-1}
       />
     </Box>

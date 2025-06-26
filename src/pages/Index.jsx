@@ -20,7 +20,7 @@ const Index = () => {
       <PanelistsSection />
       <GuestSpeakerSection />
       <WhatToExpectSection />
-      {/* <TheGoalSection /> */}
+      <TheGoalSection />
       {/* <EventDetailsSection /> */}
       {/* <CTAsSection /> */}
       {/* <GetInTouchSection /> */}

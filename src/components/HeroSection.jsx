@@ -73,8 +73,8 @@ const HeroSection = () => {
       <MotionText
         variants={fadeInUp}
         fontFamily={"secondary"}
-        fontSize={{ base: 90, md: 120 }}
-        fontWeight={700}
+        fontSize={{ base: 100, md: 140 }}
+        fontWeight={600}
         zIndex={1}
         lineHeight={1}
         letterSpacing={{ base: -6, md: -8 }}
@@ -104,10 +104,10 @@ const HeroSection = () => {
           color="black"
           display="flex"
           gap={2}
-          py={6}
-          boxShadow="0 0 10px #ffcb04, 0 0 10px #ffcb04"
+          // py={6}
+          boxShadow="0 0 2px #ffcb04, 0 0 8px #ffcb04"
           _hover={{
-            boxShadow: "0 0 40px #ffcb04, 0 0 60px #ffcb04",
+            boxShadow: "0 0 5px #ffcb04, 0 0 10px #ffcb04",
             transform: "scale(1.05)",
             transition: "all 0.3s ease-in-out",
           }}
