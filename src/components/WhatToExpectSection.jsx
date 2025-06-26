@@ -5,7 +5,6 @@ import {
   Text,
   useBreakpointValue,
   Icon,
-  Link,
   Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
