@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { HStack, Icon, Link } from "@chakra-ui/react";
+import { Phone, MessageCircle } from "lucide-react";
 
 const GetInTouchSection = () => {
   const toast = useToast();
@@ -67,7 +69,7 @@ const GetInTouchSection = () => {
         mb={4}
         textAlign="center"
         fontSize={{ base: "2xl", md: "4xl" }}
-        color="red.400"
+        color="#ffcb04"
       >
         Get In Touch
       </Heading>
@@ -123,6 +125,35 @@ const GetInTouchSection = () => {
             Send Message
           </Button>
         </VStack>
+      </Box>
+
+      <Box mt={10} textAlign="center">
+        <Text color="gray.500" mb={2}>
+          Prefer a quick chat or call?
+        </Text>
+        <HStack justify="center" spacing={6}>
+          <Link
+            href="tel:09077698077"
+            display="flex"
+            alignItems="center"
+            color="white"
+            _hover={{ textDecoration: "underline", color: "white" }}
+          >
+            <Icon as={Phone} mr={2} />
+            Call Us
+          </Link>
+          <Link
+            href="https://wa.me/2349077698077"
+            isExternal
+            display="flex"
+            alignItems="center"
+            color="#25D366"
+            _hover={{ textDecoration: "underline", color: "#128C7E" }}
+          >
+            <Icon as={MessageCircle} mr={2} />
+            Chat on WhatsApp
+          </Link>
+        </HStack>
       </Box>
     </Box>
   );
