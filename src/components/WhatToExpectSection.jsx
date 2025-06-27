@@ -52,7 +52,7 @@ const WhatToExpectSection = () => {
         opacity={0.4}
         zIndex={0}
         animate={{ opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        transition={{ duration: 1, repeat: Infinity }}
       />
       <MotionBox
         pos="absolute"

@@ -7,7 +7,7 @@ import {
   Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { CalendarDays, Clock, MapPin, Mail } from "lucide-react";
+import { CalendarDays, Clock, MapPin } from "lucide-react";
 
 const details = [
   {
@@ -25,11 +25,11 @@ const details = [
     value: "Solution Arena, 156 Ikorodu Road, Lagos",
     icon: MapPin,
   },
-  {
-    label: "Email",
-    value: "logosheart144@gmail.com",
-    icon: Mail,
-  },
+  // {
+  //   label: "Email",
+  //   value: "logosheart144@gmail.com",
+  //   icon: Mail,
+  // },
 ];
 
 const EventDetailsSection = () => {

@@ -67,7 +67,7 @@ const TheStorySection = () => {
       pb={{ base: 5, md: 10 }}
       pt={{ base: 16, md: 28 }}
       overflow="hidden"
-      minH={{ base: "90vh", md: 0 }}
+      minH={{ base: "98vh", md: "60vh" }}
     >
       <MotionImage
         src={anchorImage}

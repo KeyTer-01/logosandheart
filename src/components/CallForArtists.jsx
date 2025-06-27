@@ -134,6 +134,7 @@ const CallForArtists = () => {
                 transition={{ duration: 0.2 }}
                 minW={isMobile ? "full" : "auto"}
                 color={cta.bg}
+                _hover={{ bg: "transparent" }}
               >
                 {cta.label}
               </MotionButton>
