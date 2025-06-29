@@ -35,10 +35,10 @@ const GetInTouchSection = () => {
 
     emailjs
       .send(
-        "service_ae4mj1x", // Replace with your EmailJS service ID
-        "template_68wdyjk", // Replace with your EmailJS template ID
+        "service_zzx0b54", // Replace with your EmailJS service ID
+        "template_sh0cbfh", // Replace with your EmailJS template ID
         formData,
-        "ozRpKh6UNGNv_T38U" // Replace with your EmailJS public key
+        "KndLyucbTLnPg2YW0" // Replace with your EmailJS public key
       )
       .then(
         () => {
