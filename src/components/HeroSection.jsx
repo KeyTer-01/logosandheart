@@ -41,7 +41,7 @@ const HeroSection = () => {
         left={0}
         width="100%"
         height="100%"
-        bg="blue.700"
+        bg="blue.900"
         zIndex={0}
       />
 
