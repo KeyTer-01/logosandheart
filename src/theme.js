@@ -10,7 +10,7 @@ const theme = extendTheme({
       body: {
         // bg: "linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%)",
         color: "#000",
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: "'Andale Mono', monospace",
       },
     },
   },
@@ -41,11 +41,18 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "'Poppins', sans-serif",
-    body: "'Inter', sans-serif",
+    heading: "'Andale Mono', monospace",
+    body: "'Andale Mono', monospace",
     secondary: "'Big Shoulders Display', sans-serif",
     tertiary: "'Cursive', cursive",
   },
+
+  // fonts: {
+  //   heading: "'Poppins', sans-serif",
+  //   body: "'Inter', sans-serif",
+  //   secondary: "'Big Shoulders Display', sans-serif",
+  //   tertiary: "'Cursive', cursive",
+  // },
 });
 
 export default theme;

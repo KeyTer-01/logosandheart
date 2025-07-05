@@ -13,26 +13,39 @@ import {
   Button,
   useBreakpointValue,
   Image,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { ArrowUpRight } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import logo from "../assets/images/logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Story", href: "#story" },
-  { label: "CFA", href: "#cta" },
-  { label: "Panelists", href: "#panelists" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "Expectations", href: "#expect" },
-  { label: "Goal", href: "#goal" },
-  { label: "Details", href: "#details" },
-  { label: "Contact", href: "#contact" },
+  { label: "ABOUT", href: "#about" },
+  { label: "CALL FOR HEARTIST", href: "#cfa" },
+  { label: "CONTACT", href: "#contact" },
 ];
+
+const MotionFlex = motion(Flex);
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const controls = useAnimation();
+
+  // Add sticky shadow on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        controls.start({ boxShadow: "0 2px 10px rgba(0,0,0,0.2)" });
+      } else {
+        controls.start({ boxShadow: "0 0px 0px rgba(0,0,0,0)" });
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
 
   const handleScroll = (href) => {
     const element = document.querySelector(href);
@@ -43,28 +56,52 @@ const Navbar = () => {
   };
 
   return (
-    <Box position="fixed" top="0" width="100%" zIndex="1000">
+    <MotionFlex
+      position="fixed"
+      top="0"
+      width="100%"
+      zIndex="1000"
+      justifyContent="center"
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      // animate={controls}
+      mt={[0, 4]}
+    >
       <Flex
-        h="16"
+        h="20"
         alignItems="center"
         justifyContent="space-between"
-        px={{ base: 4, md: 8 }}
-        bg="blackAlpha.900"
-        // maxW="7xl"
-        mx="auto"
+        px={{ base: 4, md: 12 }}
+        width={["100%", "90%"]}
+        bg="transparent"
+        backdropFilter={["blur(4px)", "blur(8px)"]}
       >
-        {/* <Text fontWeight="bold" fontSize="lg" color="white">
-          LOGOS <span style={{ color: "yellow" }}>&</span> he
-          <span style={{ color: "red", fontStyle: "italic" }}>ART</span>
-        </Text> */}
-        <Box>
+        {/* Left side: Logo and event info */}
+        <HStack spacing={8} align="center">
           <Image
             src={logo}
             alt="LOGOS & heART logo"
-            boxSize={["60px", "80px"]}
+            boxSize={["50px", "60px"]}
             objectFit="contain"
           />
-        </Box>
+          <Box
+            color="white"
+            fontSize="xs"
+            lineHeight="short"
+            display={{ base: "none", md: "block" }}
+          >
+            <Text fontWeight="medium">
+              SAT, OCTOBER 11, 2025 •{" "}
+              <span style={{ opacity: 0.5 }}> 11:00 AM</span>
+            </Text>
+            <Text fontWeight="light">
+              SOLUTION ARENA BY ONIPANU, BUSTOP, LAGOS
+            </Text>
+          </Box>
+        </HStack>
+
+        {/* Right side nav */}
         {isMobile ? (
           <>
             <IconButton
@@ -151,27 +188,57 @@ const Navbar = () => {
             </Drawer>
           </>
         ) : (
-          <HStack spacing={2} color="white">
+          <HStack spacing={2} align="center">
             {navLinks.map((link) => (
               <Button
                 key={link.href}
                 variant="ghost"
                 color="white"
+                fontWeight="medium"
+                fontSize="xs"
                 onClick={() => handleScroll(link.href)}
                 _hover={{
                   color: "purple.400",
                   bg: "whiteAlpha.100",
                 }}
-                fontWeight="medium"
-                fontSize="sm"
               >
                 {link.label}
               </Button>
             ))}
+            <Button
+              as="a"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdqUUk4RyNUytAnVlmNqBtd0P358IKZ0bP51-g04cbNnakETw/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              size="sm"
+              color="white"
+              borderColor="whiteAlpha.500"
+              _hover={{ bg: "whiteAlpha.200" }}
+              fontSize="xs"
+            >
+              BECOME A SPONSOR
+            </Button>
+            <Button
+              as="a"
+              href="https://tix.africa/discover/logosandheart"
+              target="_blank"
+              rel="noopener noreferrer"
+              bg="yellow.400"
+              color="black"
+              size="sm"
+              fontWeight="bold"
+              fontSize="xs"
+              _hover={{ bg: "yellow.500" }}
+              display="flex"
+              gap={2}
+            >
+              GET TICKET <ArrowUpRight size={16} />
+            </Button>
           </HStack>
         )}
       </Flex>
-    </Box>
+    </MotionFlex>
   );
 };
 

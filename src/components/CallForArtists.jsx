@@ -1,153 +1,123 @@
 import {
   Box,
-  Button,
   Flex,
-  Image,
-  Stack,
+  Heading,
   Text,
+  SimpleGrid,
+  VStack,
+  Link,
+  Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import artistImage from "../assets/images/artist-image.png";
-import cfaImage from "../assets/images/cfa.png";
-import { motion } from "framer-motion";
-import { HeartHandshake, Paintbrush2, ShoppingBag } from "lucide-react";
-
-const MotionButton = motion(Button);
+import { Paintbrush2, ShoppingBag, HeartHandshake } from "lucide-react";
+import artistImage from "../assets/images/heartist.png"; // Replace with actual image path
 
 const ctaItems = [
   {
-    label: "Come as an Artist",
-    icon: <Paintbrush2 size={20} />,
+    label: "COME AS AN ARTIST",
+    icon: Paintbrush2,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdG7eZ2xdwg0dOMX8DBpDeGwu1dPX2unUWoaxbkQGkBWWaLow/viewform?usp=header",
-    bg: "#ba0404",
   },
   {
-    label: "Become a Vendor",
-    icon: <ShoppingBag size={20} />,
+    label: "BECOME A VENDOR",
+    icon: ShoppingBag,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSe4VBnfcRFQRterJQ7Wmor-W1lPRtyvoVpWhOK3d4EkEIUe8Q/viewform?usp=header",
-    bg: "#454545",
   },
   {
-    label: "Volunteer",
-    icon: <HeartHandshake size={20} />,
+    label: "BECOME A VOLUNTEER",
+    icon: HeartHandshake,
     link: "https://linktr.ee/logosandheart",
-    bg: "#ad8a02",
   },
 ];
 
 const CallForArtists = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
-
   return (
-    <Flex
+    <Box
       id="cta"
-      flexDirection="column"
-      alignItems="center"
-      color="#000"
-      bg="white"
-      px={{ base: 4, md: 8 }}
-      py={{ base: 16, md: 16 }}
+      bgGradient="linear(to-b, #0f0c1b, #000000)"
+      py={{ base: 16, md: 24 }}
+      px={{ base: 6, md: 20 }}
     >
-      {/* <Flex
-        alignItems={"center"}
-        justifyContent={"center"}
-        w={"100%"}
-        gap={1}
-      >
-        <Flex
-          flex={1}
-          justifyContent={"flex-end"}
-          alignItems={"center"}
-        >
-          <Text
-            fontSize={{ base: "2xl", md: "4xl" }}
-            fontWeight="bold"
-            textAlign="center"
-          >
-            Call for
-          </Text>
-        </Flex>
-        <Box flex={1}>
-          <Image src={cfaImage} alt="cfa" w={{ base: "50%" }} />
-        </Box>
-      </Flex> */}
-
       <Flex
         direction={{ base: "column", md: "row" }}
-        justify="center"
         align="center"
-        w="100%"
-        maxW="1200px"
-        gap={{ base: 10, md: 16 }}
+        justify="space-between"
+        maxW="7xl"
+        mx="auto"
+        gap={10}
       >
-        {/* Text and Buttons */}
-        <Stack w={{ base: "100%", md: "45%" }} spacing={6}>
-          <Box>
-            <Text
-              fontSize={{ base: "2xl", md: "4xl" }}
-              fontWeight="bold"
-              // textAlign="center"
-              //   lineHeight={1}
-            >
-              Call for
-            </Text>
-            <Flex alignItems={"center"}>
-              {/* <Box> */}
-              <Image src={cfaImage} alt="cfa" w={{ base: "50%" }} />
-              {/* <Text
-                fontFamily={"secondary"}
-                fontSize={48}
-                fontWeight={600}
-                mb={2}
-              >
-                s
-              </Text> */}
-              {/* </Box> */}
-            </Flex>
-          </Box>
-
-          <Text
-            fontSize={{ base: "sm", md: "lg" }}
-            color="gray.700"
-            lineHeight="1.4"
+        {/* Left Side - Text & Buttons */}
+        <Box flex={1} color="white">
+          <Heading
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontFamily="mono"
+            fontWeight="medium"
+            mb={4}
           >
+            CALL FOR <br /> HEARTIST
+          </Heading>
+          <Text fontSize="sm" color="gray.400" mb={10} fontFamily="mono">
             Join the movement. Be a part of something inspiring — create,
             connect, and contribute.
           </Text>
 
-          <Stack spacing={4}>
-            {ctaItems.map((cta) => (
-              <MotionButton
-                key={cta.label}
-                as="a"
-                href={cta.link}
+          <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={4}>
+            {ctaItems.map((item, idx) => (
+              <Link
+                href={item.link}
                 target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-                size="md"
-                borderColor={cta.bg}
-                leftIcon={cta.icon}
-                borderRadius="xl"
-                boxShadow="md"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-                minW={isMobile ? "full" : "auto"}
-                color={cta.bg}
-                _hover={{ bg: "transparent" }}
+                key={idx}
+                _hover={{ textDecor: "none" }}
               >
-                {cta.label}
-              </MotionButton>
+                <VStack
+                  bg="whiteAlpha.100"
+                  border="1px solid"
+                  borderColor="whiteAlpha.300"
+                  p={6}
+                  spacing={3}
+                  borderRadius="md"
+                  textAlign="center"
+                  transition="all 0.2s ease"
+                  _hover={{ bg: "whiteAlpha.200" }}
+                >
+                  <Icon as={item.icon} boxSize={6} color="white" />
+                  <Text fontSize="sm" fontFamily="mono" color="white">
+                    {item.label}
+                  </Text>
+                </VStack>
+              </Link>
             ))}
-          </Stack>
-        </Stack>
+          </SimpleGrid>
+        </Box>
 
-        {/* Image */}
-        <Box w={{ base: "80%", md: "20%" }} maxW="400px">
-          <Image src={artistImage} alt="artist" w="100%" objectFit="contain" />
+        {/* Right Side - Image */}
+        <Box
+          flex={1}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Box
+            w="full"
+            h="full"
+            borderRadius="md"
+            overflow="hidden"
+            maxW="400px"
+            boxShadow="lg"
+          >
+            <img
+              src={artistImage}
+              alt="artist"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </Box>
         </Box>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
 
