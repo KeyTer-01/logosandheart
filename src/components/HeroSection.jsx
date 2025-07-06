@@ -24,7 +24,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5;
+      videoRef.current.playbackRate = 0.75;
     }
   }, []);
   return (

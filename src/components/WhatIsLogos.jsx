@@ -14,7 +14,7 @@ const WhatIsLogos = () => {
       position="relative" // 👈 Needed for absolute overlays
       background="radial-gradient(50% 50% at 50% 50%, #0B171D 0%, #060C0F 100%)"
       color="white"
-      py={20}
+      py={28}
       px={[6, 10, 20]}
       overflow="hidden"
     >
