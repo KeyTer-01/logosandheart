@@ -45,7 +45,13 @@ const WhatIsLogos = () => {
           <Image src={headingImage} alt="Theme Icon" width={60} />
         </Flex>
 
-        <Text textAlign="center" color="#FFCB04" mb={10}>
+        <Text
+          textAlign="center"
+          fontFamily={"tertiary"}
+          color="#FFCB04"
+          mb={10}
+          fontSize={["sm", "md"]}
+        >
           THEME: FAITH WILL SAVE US
         </Text>
 

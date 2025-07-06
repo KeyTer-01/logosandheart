@@ -7,25 +7,27 @@ import {
   VStack,
   Link,
   Icon,
-  useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
-import { Paintbrush2, ShoppingBag, HeartHandshake } from "lucide-react";
+import paintbrush from "../assets/images/brush.png";
+import shop from "../assets/images/shop.png";
+import love from "../assets/images/lovely.png";
 import artistImage from "../assets/images/heartist.png"; // Replace with actual image path
 
 const ctaItems = [
   {
     label: "COME AS AN ARTIST",
-    icon: Paintbrush2,
+    icon: paintbrush,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdG7eZ2xdwg0dOMX8DBpDeGwu1dPX2unUWoaxbkQGkBWWaLow/viewform?usp=header",
   },
   {
     label: "BECOME A VENDOR",
-    icon: ShoppingBag,
+    icon: shop,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSe4VBnfcRFQRterJQ7Wmor-W1lPRtyvoVpWhOK3d4EkEIUe8Q/viewform?usp=header",
   },
   {
     label: "BECOME A VOLUNTEER",
-    icon: HeartHandshake,
+    icon: love,
     link: "https://linktr.ee/logosandheart",
   },
 ];
@@ -34,7 +36,8 @@ const CallForArtists = () => {
   return (
     <Box
       id="cta"
-      bgGradient="linear(to-b, #0f0c1b, #000000)"
+      background="radial-gradient(50% 50% at 50% 50%, #1F1329 0%, #100A15 100%);"
+      // bgGradient="linear(to-b, #0f0c1b, #000000)"
       py={{ base: 16, md: 24 }}
       px={{ base: 6, md: 20 }}
       position={"relative"}
@@ -58,55 +61,53 @@ const CallForArtists = () => {
         gap={10}
       >
         {/* Left Side - Text & Buttons */}
-        <Box flex={1} color="white">
-          <Heading
-            fontSize={{ base: "3xl", md: "5xl" }}
-            fontFamily="mono"
-            fontWeight="medium"
-            mb={4}
-          >
-            CALL FOR <br /> HEARTIST
-          </Heading>
-          <Text fontSize="sm" color="gray.400" mb={10} fontFamily="mono">
-            Join the movement. Be a part of something inspiring — create,
-            connect, and contribute.
-          </Text>
-
-          <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={4}>
-            {ctaItems.map((item, idx) => (
-              <Link
-                href={item.link}
-                target="_blank"
-                key={idx}
-                _hover={{ textDecor: "none" }}
-              >
-                <VStack
-                  // bg="whiteAlpha.100"
-                  border="1px solid"
-                  borderColor="whiteAlpha.300"
-                  p={6}
-                  spacing={3}
-                  borderRadius="md"
-                  // textAlign="center"
-                  justifyContent={"center"}
-                  alignItems={"flex-start"}
-                  transition="all 0.2s ease"
-                  _hover={{ bg: "whiteAlpha.200" }}
-                  minH={{ base: 0, md: 36 }}
+        <Box flex={2} color="white">
+          <Box w={["100%", "60%"]}>
+            <Heading
+              fontSize={{ base: "3xl", md: "5xl" }}
+              fontFamily="mono"
+              fontWeight="medium"
+              mb={4}
+            >
+              CALL FOR HEARTIST
+            </Heading>
+            <Text fontSize="sm" color="gray.400" mb={10} fontFamily="mono">
+              Join the movement. Be a part of something inspiring — create,
+              connect, and contribute.
+            </Text>
+            <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={4} mt={6}>
+              {ctaItems.map((item, idx) => (
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  key={idx}
+                  _hover={{ textDecor: "none" }}
                 >
-                  <Icon
-                    as={item.icon}
-                    alignSelf={"flex-start"}
-                    boxSize={6}
-                    color="white"
-                  />
-                  <Text fontSize="sm" fontFamily="mono" color="white">
-                    {item.label}
-                  </Text>
-                </VStack>
-              </Link>
-            ))}
-          </SimpleGrid>
+                  <VStack
+                    border="1px solid"
+                    borderColor="whiteAlpha.300"
+                    p={6}
+                    spacing={3}
+                    borderRadius="md"
+                    align="flex-start"
+                    transition="all 0.2s ease"
+                    _hover={{ bg: "whiteAlpha.200" }}
+                    // w={["full", "60%"]}
+                  >
+                    <Image src={item.icon} boxSize={6} color="white" />
+                    <Text
+                      fontSize="sm"
+                      fontFamily="mono"
+                      color="white"
+                      // textAlign="center"
+                    >
+                      {item.label}
+                    </Text>
+                  </VStack>
+                </Link>
+              ))}
+            </SimpleGrid>
+          </Box>
         </Box>
 
         {/* Right Side - Image */}
@@ -115,22 +116,25 @@ const CallForArtists = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          // bg={"yellow"}
+          w={"100%"}
         >
           <Box
-            w="full"
-            h="full"
+            w="100%"
+            // h="100%"
             borderRadius="md"
             overflow="hidden"
             maxW="400px"
-            boxShadow="lg"
+            // bg={"yellow"}
+            // boxShadow="lg"
           >
             <img
               src={artistImage}
               alt="artist"
               style={{
                 width: "100%",
-                height: "100%",
-                objectFit: "cover",
+                // height: "100%",
+                // objectFit: "cover",
               }}
             />
           </Box>

@@ -73,7 +73,7 @@ const Navbar = () => {
         alignItems="center"
         justifyContent="space-between"
         px={{ base: 4, md: 12 }}
-        width={["90%", "90%"]}
+        width={["95%", "90%"]}
         bg="transparent"
         backdropFilter={["blur(4px)", "blur(8px)"]}
       >
@@ -87,7 +87,7 @@ const Navbar = () => {
           />
           <Box
             color="white"
-            fontSize={[10, "xs"]}
+            fontSize={[11, "xs"]}
             lineHeight="short"
             // display={{ base: "none", md: "block" }}
           >

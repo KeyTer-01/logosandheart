@@ -44,7 +44,7 @@ const theme = extendTheme({
     heading: "'Andale Mono', monospace",
     body: "'Andale Mono', monospace",
     secondary: "'Big Shoulders Display', sans-serif",
-    tertiary: "'Cursive', cursive",
+    tertiary: "'Angkor', cursive",
   },
 
   // fonts: {

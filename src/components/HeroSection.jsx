@@ -49,8 +49,9 @@ const HeroSection = () => {
         left={0}
         width="100%"
         height="100%"
-        bg="blue.900"
+        bg="cyan.800"
         zIndex={0}
+        // opacity={0.85}
       />
 
       {/* Video with blend mode */}

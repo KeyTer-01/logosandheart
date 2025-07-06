@@ -14,6 +14,8 @@ import "@fontsource/big-shoulders-display/700.css";
 import "@fontsource/big-shoulders-display/800.css";
 import "@fontsource/big-shoulders-display/900.css";
 
+import "@fontsource/angkor";
+
 const App = () => (
   <ChakraProvider theme={theme}>
     <BrowserRouter>
