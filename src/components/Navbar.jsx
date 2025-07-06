@@ -66,19 +66,19 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       // animate={controls}
-      mt={[0, 4]}
+      mt={[4]}
     >
       <Flex
         h="20"
         alignItems="center"
         justifyContent="space-between"
         px={{ base: 4, md: 12 }}
-        width={["100%", "90%"]}
+        width={["90%", "90%"]}
         bg="transparent"
         backdropFilter={["blur(4px)", "blur(8px)"]}
       >
         {/* Left side: Logo and event info */}
-        <HStack spacing={8} align="center">
+        <HStack spacing={[4, 8]} align="center">
           <Image
             src={logo}
             alt="LOGOS & heART logo"
@@ -87,11 +87,11 @@ const Navbar = () => {
           />
           <Box
             color="white"
-            fontSize="xs"
+            fontSize={[10, "xs"]}
             lineHeight="short"
-            display={{ base: "none", md: "block" }}
+            // display={{ base: "none", md: "block" }}
           >
-            <Text fontWeight="medium">
+            <Text fontWeight="light">
               SAT, OCTOBER 11, 2025 •{" "}
               <span style={{ opacity: 0.5 }}> 11:00 AM</span>
             </Text>
@@ -115,7 +115,7 @@ const Navbar = () => {
             />
 
             <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-              <DrawerOverlay bg="blackAlpha.800" />
+              <DrawerOverlay bg="blackAlpha.700" />
               <DrawerContent
                 bg="transparent"
                 backdropFilter="blur(10px)"
@@ -188,7 +188,7 @@ const Navbar = () => {
             </Drawer>
           </>
         ) : (
-          <HStack spacing={2} align="center">
+          <HStack spacing={1} align="center">
             {navLinks.map((link) => (
               <Button
                 key={link.href}
@@ -198,7 +198,7 @@ const Navbar = () => {
                 fontSize="xs"
                 onClick={() => handleScroll(link.href)}
                 _hover={{
-                  color: "purple.400",
+                  color: "#FFCB04",
                   bg: "whiteAlpha.100",
                 }}
               >
@@ -211,11 +211,14 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
-              size="sm"
+              // size="sm"
               color="white"
               borderColor="whiteAlpha.500"
               _hover={{ bg: "whiteAlpha.200" }}
               fontSize="xs"
+              borderRadius={0}
+              bg={"#FFFFFF0A"}
+              fontWeight={"light"}
             >
               BECOME A SPONSOR
             </Button>
@@ -224,16 +227,16 @@ const Navbar = () => {
               href="https://tix.africa/discover/logosandheart"
               target="_blank"
               rel="noopener noreferrer"
-              bg="yellow.400"
+              bg="#FFCB04"
               color="black"
-              size="sm"
+              // size="sm"
               fontWeight="bold"
               fontSize="xs"
-              _hover={{ bg: "yellow.500" }}
-              display="flex"
-              gap={2}
+              // _hover={{ bg: "#FFCB04" }}
+              borderRadius={0}
+              ml={2}
             >
-              GET TICKET <ArrowUpRight size={16} />
+              GET TICKET
             </Button>
           </HStack>
         )}

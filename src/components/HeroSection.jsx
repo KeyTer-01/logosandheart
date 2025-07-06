@@ -1,8 +1,16 @@
-import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import bgVideo from "../assets/videos/bg-video.mp4";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-// import logoIcon from "../assets/images/logo-icon.png"; // Optional icon
+import barcode from "../assets/images/barcode.png"; // Optional icon
 
 const MotionText = motion(Text);
 
@@ -25,7 +33,7 @@ const HeroSection = () => {
       initial="hidden"
       animate="show"
       position="relative"
-      minH="100vh"
+      minH={["90vh", "100vh"]}
       w="100%"
       color="white"
       flexDirection="column"
@@ -68,8 +76,8 @@ const HeroSection = () => {
       <Stack
         spacing={0}
         zIndex={1}
-        mb={{ base: 6, md: 4 }}
-        textAlign={{ base: "center", md: "left" }}
+        mb={{ base: 0, md: 4 }}
+        // textAlign={{ base: "center", md: "left" }}
       >
         <MotionText
           variants={fadeInUp}
@@ -94,10 +102,10 @@ const HeroSection = () => {
       {/* Description */}
       <MotionText
         variants={fadeInUp}
-        mt={6}
-        fontSize={{ base: "sm", sm: "md", md: "lg" }}
+        mt={[2, 6]}
+        fontSize={{ base: "xs", sm: "md", md: "lg" }}
         maxW={{ base: "100%", md: "720px" }}
-        textAlign={{ base: "center", md: "left" }}
+        // textAlign={{ base: "center", md: "left" }}
         color="#CBD5E0"
         zIndex={1}
         mx={{ base: "auto", md: "0" }}
@@ -105,34 +113,87 @@ const HeroSection = () => {
         LOGOS & heART is where the Word meets creativity. An immersive
         faith-based art experience that brings Scripture to life through Arts,
         visual storytelling, music, performance, and conversation. At its heart,
-        it&apos;s a call to live by faith — to see, feel, and believe again.
+        it&apos;s a call to live by faith — to see, feel, and believe again.{" "}
+        <br />
         Welcome to LOGOS & heART 1.0
       </MotionText>
+
+      <HStack
+        spacing={1}
+        align="center"
+        mt={4}
+        mb={8}
+        zIndex={4}
+        display={["block", "none"]}
+      >
+        <Button
+          as="a"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdqUUk4RyNUytAnVlmNqBtd0P358IKZ0bP51-g04cbNnakETw/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+          // size="sm"
+          color="white"
+          borderColor="whiteAlpha.500"
+          _hover={{ bg: "whiteAlpha.200" }}
+          fontSize="xs"
+          borderRadius={0}
+          bg={"#FFFFFF0A"}
+          fontWeight={"light"}
+        >
+          BECOME A SPONSOR
+        </Button>
+        <Button
+          as="a"
+          href="https://tix.africa/discover/logosandheart"
+          target="_blank"
+          rel="noopener noreferrer"
+          bg="#FFCB04"
+          color="black"
+          // size="sm"
+          fontWeight="bold"
+          fontSize="xs"
+          // _hover={{ bg: "#FFCB04" }}
+          borderRadius={0}
+          ml={2}
+        >
+          GET TICKET
+        </Button>
+      </HStack>
 
       {/* Bottom Left Theme */}
       <Flex
         pos="absolute"
-        left={{ base: 4, sm: 6 }}
+        left={{ base: "15%", sm: 6 }}
         bottom={{ base: 20, sm: 6 }}
         align="center"
         gap={4}
         zIndex={2}
-        flexDirection="column"
-        alignItems="flex-start"
+        // flexDirection="column"
+        alignItems="center"
         textAlign="left"
       >
-        {/* <Image src={logoIcon} alt="Theme Icon" boxSize="40px" /> */}
+        <Flex
+          bg={"whiteAlpha.200"}
+          w={["48px", "84px"]}
+          h={["40px", "68px"]}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Image src={barcode} alt="Theme Icon" boxSize="20px" />
+        </Flex>
+
         <Box>
           <Text
-            fontSize={{ base: "xs", sm: "sm" }}
-            color="yellow.400"
-            fontWeight="semibold"
+            // fontSize={{ base: 19 }}
+            color="#FFCB04"
+            // fontWeight="semibold"
             textTransform="uppercase"
             letterSpacing="wider"
           >
             FAITH WILL SAVE US
           </Text>
-          <Text fontSize="xs" color="yellow.300">
+          <Text fontSize={14} color="#FFCB04" opacity={0.7}>
             — THEME
           </Text>
         </Box>
@@ -141,7 +202,7 @@ const HeroSection = () => {
       {/* Bottom Right CTA */}
       <Button
         pos="absolute"
-        right={{ base: 4, sm: 6 }}
+        right={{ base: 6, sm: 6 }}
         bottom={{ base: 4, sm: 6 }}
         // variant="ghost"
         fontSize={{ base: "2xs", sm: "xs" }}
@@ -157,6 +218,7 @@ const HeroSection = () => {
         maxW={{ base: "90%", sm: "none" }}
         bgColor={"#FFFFFF0A"}
         fontWeight={"light"}
+        w={["100%", "325px"]}
       >
         SHOWING JESUS THROUGH ART
       </Button>
