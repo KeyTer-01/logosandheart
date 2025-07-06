@@ -47,17 +47,18 @@ const CallForArtists = () => {
         top="0"
         left="0"
         right="0"
-        height="200px"
-        bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+        height="300px"
+        bgGradient="linear(to-t,  transparent, blackAlpha.900)"
         zIndex={1}
       />
+
       {/* Bottom Overlay */}
       <Box
         position="absolute"
         bottom="0"
         left="0"
         right="0"
-        height="200px"
+        height="300px"
         bgGradient="linear(to-t, blackAlpha.900, transparent)"
         zIndex={2}
       />

@@ -30,6 +30,8 @@ const TheGoalSection = () => (
     px={{ base: 4, md: 16 }}
     bgGradient="linear(to-br, #010314, #020c1b)"
     color="white"
+    position={"relative"}
+    zIndex={1}
   >
     {/* Text */}
     <Box mb={10}>
@@ -65,6 +67,7 @@ const TheGoalSection = () => (
           borderRadius: "10px",
         },
       }}
+      // zIndex={6}
     >
       <Flex gap={4} minW="max-content">
         {images.map((src, idx) => (
@@ -81,6 +84,27 @@ const TheGoalSection = () => (
         ))}
       </Flex>
     </Box>
+
+    {/* Top Overlay */}
+    <Box
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      height="200px"
+      bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+      zIndex={-1}
+    />
+    {/* Bottom Overlay */}
+    <Box
+      position="absolute"
+      bottom="0"
+      left="0"
+      right="0"
+      height="200px"
+      bgGradient="linear(to-t, blackAlpha.900, transparent)"
+      zIndex={-1}
+    />
   </Box>
 );
 

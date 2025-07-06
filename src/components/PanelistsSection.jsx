@@ -93,7 +93,7 @@ const PanelistsSection = () => {
         top="0"
         left="0"
         right="0"
-        height="200px"
+        height="300px"
         bgGradient="linear(to-t,  transparent, blackAlpha.800)"
         zIndex={-1}
       />

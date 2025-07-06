@@ -11,7 +11,7 @@ const definitions = [
 const WhatIsLogos = () => {
   return (
     <Box
-      position="relative" // 👈 Needed for absolute overlays
+      position="relative"
       background="radial-gradient(50% 50% at 50% 50%, #0B171D 0%, #060C0F 100%)"
       color="white"
       py={28}
@@ -86,10 +86,15 @@ const WhatIsLogos = () => {
                   alignItems="center"
                   gap={2}
                 >
-                  <Text fontWeight={900} fontSize={28} color="#FFCB04">
+                  <Text
+                    fontWeight={900}
+                    // fontFamily={"tertiary"}
+                    fontSize={28}
+                    color="#FFCB04"
+                  >
                     !
                   </Text>
-                  <Text>{text}</Text>
+                  <Text fontSize={["sm", "md"]}>{text}</Text>
                 </Flex>
               ))}
             </Grid>

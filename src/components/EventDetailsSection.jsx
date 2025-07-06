@@ -1,69 +1,113 @@
 import {
   Box,
   Heading,
-  Stack,
   Text,
   HStack,
+  VStack,
+  Button,
   Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { CalendarDays, Clock, MapPin } from "lucide-react";
-
-const details = [
-  {
-    label: "Date",
-    value: "Saturday, October 11, 2025",
-    icon: CalendarDays,
-  },
-  {
-    label: "Time",
-    value: "11:00 AM",
-    icon: Clock,
-  },
-  {
-    label: "Venue",
-    value: "Solution Arena, 156 Ikorodu Road, Lagos",
-    icon: MapPin,
-  },
-  // {
-  //   label: "Email",
-  //   value: "logosheart144@gmail.com",
-  //   icon: Mail,
-  // },
-];
+import {
+  // CalendarDays, MapPin,
+  LocateFixed,
+} from "lucide-react";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 const EventDetailsSection = () => {
-  const fontSize = useBreakpointValue({ base: "md", md: "lg" });
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
-    <Box id="details" py={20} px={6} bg="white">
-      <Heading
-        textAlign="center"
-        mb={10}
-        fontSize={{ base: "2xl", md: "4xl" }}
-        color="red.700"
+    <Box
+      id="details"
+      py={{ base: 12, md: 20 }}
+      px={{ base: 6, md: 20 }}
+      bgGradient="radial(#020420, #010314)"
+      color="white"
+      position="relative"
+      zIndex={-2}
+    >
+      {/* Top-right Note */}
+      <Text
+        position="absolute"
+        top={{ base: 4, md: 6 }}
+        right={{ base: 4, md: 20 }}
+        fontSize="sm"
+        fontFamily="mono"
+        color="yellow.400"
+        textAlign={"right"}
       >
-        Event Details
-      </Heading>
+        Admission is free, <br />
+        but registration is compulsory.
+      </Text>
 
-      <Stack spacing={6} maxW="2xl" mx="auto">
-        {details.map(({ label, value, icon }, idx) => (
-          <HStack
-            key={idx}
-            spacing={4}
-            align="flex-start"
-            p={4}
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="sm"
-          >
-            <Icon as={icon} boxSize={6} color="red.400" />
-            <Text fontSize={fontSize} color="gray.700">
-              <strong>{label}:</strong> {value}
-            </Text>
-          </HStack>
-        ))}
-      </Stack>
+      {/* Main Date Info */}
+      <VStack align="flex-start" spacing={2} mb={10}>
+        <Heading fontSize={{ base: "3xl", md: "6xl" }} fontWeight="light">
+          OCT 11, 2025
+        </Heading>
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          // fontFamily="mono"
+          color="gray.300"
+        >
+          SATURDAY • 11:00 AM
+        </Text>
+      </VStack>
+
+      {/* Buttons */}
+      <HStack spacing={4} mb={10}>
+        <Button
+          leftIcon={<Icon as={LocateFixed} />}
+          variant="outline"
+          colorScheme="whiteAlpha"
+          fontFamily="mono"
+        >
+          View on Map
+        </Button>
+        <Button
+          leftIcon={<Icon as={FaRegCalendarAlt} />}
+          variant="outline"
+          colorScheme="whiteAlpha"
+          fontFamily="mono"
+        >
+          Add to Calendar
+        </Button>
+      </HStack>
+
+      {/* Location Bottom-Right */}
+      <Box mt={12} zIndex={4}>
+        <Text
+          // fontFamily="mono"
+          fontSize={{ base: "md", md: "2xl" }}
+          textAlign={isMobile ? "left" : "right"}
+          whiteSpace="pre-line"
+          zIndex={4}
+        >
+          SOLUTION ARENA BY{"\n"}ONIPANU, BUSTOP, LAGOS
+        </Text>
+      </Box>
+
+      {/* Top Overlay */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+        zIndex={-1}
+      />
+      {/* Bottom Overlay */}
+      <Box
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t, blackAlpha.900, transparent)"
+        zIndex={-1}
+      />
     </Box>
   );
 };
