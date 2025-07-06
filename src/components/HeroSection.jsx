@@ -105,7 +105,7 @@ const HeroSection = () => {
         variants={fadeInUp}
         mt={[2, 6]}
         fontSize={{ base: "xs", sm: "md", md: "lg" }}
-        maxW={{ base: "100%", md: "720px" }}
+        maxW={{ base: "100%", md: "740px" }}
         // textAlign={{ base: "center", md: "left" }}
         color="#CBD5E0"
         zIndex={1}

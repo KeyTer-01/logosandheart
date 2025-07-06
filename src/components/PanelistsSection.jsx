@@ -26,6 +26,7 @@ const PanelistsSection = () => {
       px={{ base: 4, md: 10 }}
       id="panelists"
       position="relative"
+      zIndex={-1}
     >
       <Heading
         fontFamily="mono"
@@ -35,6 +36,7 @@ const PanelistsSection = () => {
         fontWeight="medium"
         color="white"
         letterSpacing="widest"
+        zIndex={100}
       >
         MEET OUR PANELISTS
       </Heading>
@@ -84,6 +86,27 @@ const PanelistsSection = () => {
           </MotionBox>
         ))}
       </SimpleGrid>
+
+      {/* Top Overlay */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+        zIndex={-1}
+      />
+      {/* Bottom Overlay */}
+      <Box
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t, blackAlpha.800, transparent)"
+        zIndex={-1}
+      />
     </Box>
   );
 };

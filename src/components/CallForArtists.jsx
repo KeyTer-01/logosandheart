@@ -6,7 +6,6 @@ import {
   SimpleGrid,
   VStack,
   Link,
-  Icon,
   Image,
 } from "@chakra-ui/react";
 import paintbrush from "../assets/images/brush.png";
@@ -38,8 +37,8 @@ const CallForArtists = () => {
       id="cta"
       background="radial-gradient(50% 50% at 50% 50%, #1F1329 0%, #100A15 100%);"
       // bgGradient="linear(to-b, #0f0c1b, #000000)"
-      py={{ base: 16, md: 24 }}
-      px={{ base: 6, md: 20 }}
+      py={{ base: 16, md: 0 }}
+      // px={{ base: 6, md: 20 }}
       position={"relative"}
     >
       {/* Top Overlay */}
@@ -52,6 +51,17 @@ const CallForArtists = () => {
         bgGradient="linear(to-t,  transparent, blackAlpha.800)"
         zIndex={1}
       />
+      {/* Bottom Overlay */}
+      <Box
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t, blackAlpha.900, transparent)"
+        zIndex={2}
+      />
+
       <Flex
         direction={{ base: "column-reverse", md: "row" }}
         align="center"
@@ -61,8 +71,8 @@ const CallForArtists = () => {
         gap={10}
       >
         {/* Left Side - Text & Buttons */}
-        <Box flex={2} color="white">
-          <Box w={["100%", "60%"]}>
+        <Box flex={2} color="white" zIndex={2} px={{ base: 6, md: 20 }}>
+          <Box w={["100%", "65%"]}>
             <Heading
               fontSize={{ base: "3xl", md: "5xl" }}
               fontFamily="mono"
@@ -86,19 +96,21 @@ const CallForArtists = () => {
                   <VStack
                     border="1px solid"
                     borderColor="whiteAlpha.300"
-                    p={6}
+                    py={6}
+                    px={4}
                     spacing={3}
                     borderRadius="md"
-                    align="flex-start"
+                    align={["center", "flex-start"]}
                     transition="all 0.2s ease"
                     _hover={{ bg: "whiteAlpha.200" }}
                     // w={["full", "60%"]}
                   >
-                    <Image src={item.icon} boxSize={6} color="white" />
+                    <Image src={item.icon} boxSize={8} color="white" />
                     <Text
                       fontSize="sm"
-                      fontFamily="mono"
+                      // fontFamily="mono"
                       color="white"
+                      letterSpacing={1}
                       // textAlign="center"
                     >
                       {item.label}
