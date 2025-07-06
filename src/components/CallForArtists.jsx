@@ -37,9 +37,20 @@ const CallForArtists = () => {
       bgGradient="linear(to-b, #0f0c1b, #000000)"
       py={{ base: 16, md: 24 }}
       px={{ base: 6, md: 20 }}
+      position={"relative"}
     >
+      {/* Top Overlay */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+        zIndex={1}
+      />
       <Flex
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "column-reverse", md: "row" }}
         align="center"
         justify="space-between"
         maxW="7xl"
@@ -70,17 +81,25 @@ const CallForArtists = () => {
                 _hover={{ textDecor: "none" }}
               >
                 <VStack
-                  bg="whiteAlpha.100"
+                  // bg="whiteAlpha.100"
                   border="1px solid"
                   borderColor="whiteAlpha.300"
                   p={6}
                   spacing={3}
                   borderRadius="md"
-                  textAlign="center"
+                  // textAlign="center"
+                  justifyContent={"center"}
+                  alignItems={"flex-start"}
                   transition="all 0.2s ease"
                   _hover={{ bg: "whiteAlpha.200" }}
+                  minH={{ base: 0, md: 36 }}
                 >
-                  <Icon as={item.icon} boxSize={6} color="white" />
+                  <Icon
+                    as={item.icon}
+                    alignSelf={"flex-start"}
+                    boxSize={6}
+                    color="white"
+                  />
                   <Text fontSize="sm" fontFamily="mono" color="white">
                     {item.label}
                   </Text>

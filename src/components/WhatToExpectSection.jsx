@@ -3,18 +3,17 @@ import {
   Heading,
   Stack,
   Text,
-  useBreakpointValue,
-  Icon,
   Button,
+  Flex,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
 
-const MotionBox = motion(Box);
 const MotionText = motion(Text);
+const MotionBox = motion(Box);
 
 const expectations = [
-  "An all-round immersive experience",
+  "A transformative celebration of creativity, community, and faith",
   "Open call exhibition space for Christian creatives/artists to showcase and sell faith-themed work across every medium",
   "Guided art tours through the three central collections",
   "Stage drama and spoken word performances",
@@ -26,123 +25,108 @@ const expectations = [
 ];
 
 const WhatToExpectSection = () => {
-  const iconSize = useBreakpointValue({ base: "14px", md: "18px" });
+  const fontSize = useBreakpointValue({ base: "sm", md: "md" });
 
   return (
     <Box
-      as="section"
-      id="expect"
-      position="relative"
-      bg="white"
-      color="gray.800"
+      bg="black"
+      color="white"
+      fontFamily="mono"
       py={{ base: 20, md: 28 }}
       px={{ base: 6, md: 10 }}
-      overflow="hidden"
+      textAlign={["right", "center"]}
     >
-      {/* Soft Glow Background Elements */}
-      <MotionBox
-        pos="absolute"
-        top="5%"
-        left="5%"
-        w="20rem"
-        h="20rem"
-        bg="red.100"
-        rounded="full"
-        filter="blur(100px)"
-        opacity={0.4}
-        zIndex={0}
-        animate={{ opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 1, repeat: Infinity }}
-      />
-      <MotionBox
-        pos="absolute"
-        bottom="5%"
-        right="5%"
-        w="20rem"
-        h="20rem"
-        bg="yellow.100"
-        rounded="full"
-        filter="blur(100px)"
-        opacity={0.4}
-        zIndex={0}
-        animate={{ opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
+      {/* Heading */}
+      <Heading
+        fontSize={{ base: "2xl", md: "4xl" }}
+        letterSpacing="widest"
+        mb={2}
+      >
+        WHAT TO EXPECT
+      </Heading>
+      <Text fontSize={{ base: "xs", md: "md" }} color="gray.300" mb={[8, 12]}>
+        A transformative celebration of <br />
+        creativity, community, and faith
+      </Text>
 
-      {/* Section Heading */}
-      <Box textAlign="center" mb={12} pos="relative" zIndex={2}>
-        <Heading
-          fontSize={{ base: "4xl", md: "5xl" }}
-          fontWeight="bold"
-          color="gray.800"
-          fontFamily={"secondary"}
-        >
-          What to Expect
-        </Heading>
-        <Text mt={3} fontSize={{ base: "md", md: "lg" }} color="gray.600">
-          A transformative celebration of creativity, community, and faith
-        </Text>
+      {/* List Box */}
+      <Box
+        border="1px solid #444"
+        maxW="4xl"
+        mx="auto"
+        textAlign="left"
+        fontSize={fontSize}
+      >
+        {expectations.map((item, index) => (
+          <Box
+            key={index}
+            borderBottom={
+              index !== expectations.length - 1 ? "1px solid #444" : "none"
+            }
+            px={4}
+            py={3}
+            display="flex"
+            alignItems="center"
+            gap={2}
+          >
+            <Text color="gray.400" fontSize="xs">
+              ┐
+            </Text>
+            <Text>{item}</Text>
+          </Box>
+        ))}
       </Box>
 
-      {/* Expectations List */}
-      <Stack spacing={5} maxW="5xl" mx="auto" pos="relative" zIndex={2}>
-        {expectations.map((item, index) => (
-          <MotionText
-            key={index}
-            fontSize={{ base: "md", md: "lg" }}
-            color="gray.700"
-            display="flex"
-            alignItems="start"
-            gap={3}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.15 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <Icon as={Sparkles} color="red.400" boxSize={iconSize} mt={1} />
-            {item}
-          </MotionText>
-        ))}
-
-        {/* Registration CTA */}
-        <MotionText
-          fontWeight="medium"
-          fontSize={{ base: "md", md: "lg" }}
-          mt={6}
-          textAlign="center"
-          color="gray.700"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: expectations.length * 0.15 }}
-          viewport={{ once: true, amount: 0.3 }}
+      {/* Buttons */}
+      <Flex
+        mt={10}
+        justify="center"
+        gap={4}
+        direction={{ base: "column", sm: "row" }}
+      >
+        {/* <HStack
+          spacing={1}
+          align="center"
+          mt={4}
+          mb={8}
+          zIndex={4}
+          display={["block", "none"]}
+        > */}
+        <Button
+          as="a"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdqUUk4RyNUytAnVlmNqBtd0P358IKZ0bP51-g04cbNnakETw/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+          // size="sm"
+          color="white"
+          borderColor="whiteAlpha.500"
+          _hover={{ bg: "whiteAlpha.200" }}
+          fontSize="xs"
+          borderRadius={0}
+          bg={"#FFFFFF0A"}
+          fontWeight={"light"}
         >
-          <Button
-            as="a"
-            href="https://tix.africa/discover/logosandheart"
-            target="_blank"
-            rel="noopener noreferrer"
-            w="100%"
-            variant="outline"
-            // bg="white"
-            color="black"
-            display="flex"
-            gap={2}
-            border={"2px solid darkred"}
-          >
-            Get a Ticket <ArrowUpRight size={20} />
-          </Button>
-          {/* Kindly register via this link —{" "}
-          <Link
-            href="https://linktr.ee/logosandheart"
-            isExternal
-            color="red.500"
-            fontWeight="bold"
-            _hover={{ textDecoration: "underline", color: "red.400" }}
-          >
-            https://linktr.ee/logosandheart
-          </Link> */}
-        </MotionText>
-      </Stack>
+          BECOME A SPONSOR
+        </Button>
+        <Button
+          as="a"
+          href="https://tix.africa/discover/logosandheart"
+          target="_blank"
+          rel="noopener noreferrer"
+          bg="#FFCB04"
+          color="black"
+          // size="sm"
+          fontWeight="bold"
+          fontSize="xs"
+          // _hover={{ bg: "#FFCB04" }}
+          borderRadius={0}
+          // ml={2}
+        >
+          GET TICKET
+        </Button>
+        {/* </HStack> */}
+      </Flex>
     </Box>
   );
 };

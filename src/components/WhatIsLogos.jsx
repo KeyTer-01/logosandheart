@@ -53,7 +53,7 @@ const WhatIsLogos = () => {
           {/* Left side */}
           <Box flex={1}>
             <Text
-              fontSize={["2xl", "3xl"]}
+              fontSize={["xl", "3xl"]}
               textAlign={["center", "left"]}
               w={["100%", "50%"]}
               textTransform={"uppercase"}
@@ -80,7 +80,7 @@ const WhatIsLogos = () => {
                   alignItems="center"
                   gap={2}
                 >
-                  <Text fontWeight={900} fontSize={20} color="#FFCB04">
+                  <Text fontWeight={900} fontSize={28} color="#FFCB04">
                     !
                   </Text>
                   <Text>{text}</Text>
