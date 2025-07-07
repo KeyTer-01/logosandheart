@@ -1,17 +1,16 @@
 import { Flex } from "@chakra-ui/react";
-// import HeroSection from "../components/HeroSection";
 import PanelistsSection from "../components/PanelistsSection";
 import GuestSpeakerSection from "../components/GuestSpeakerSection";
 import TheStorySection from "../components/TheStorySection";
 import WhatToExpectSection from "../components/WhatToExpectSection";
 import TheGoalSection from "../components/TheGoalSection";
 import EventDetailsSection from "../components/EventDetailsSection";
-// import CTAsSection from "../components/CTAsSection";
 import GetInTouchSection from "../components/GetInTouchSection";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import CallForArtists from "../components/CallForArtists";
 import WhatIsLogos from "../components/WhatIsLogos";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
@@ -26,8 +25,8 @@ const Index = () => {
       <PanelistsSection />
       <GuestSpeakerSection />
       <EventDetailsSection />
-      {/* <CTAsSection /> */}
       <GetInTouchSection />
+      <Footer />
     </Flex>
   );
 };

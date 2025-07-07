@@ -68,10 +68,22 @@ const GetInTouchSection = () => {
     <Box
       id="contact"
       py={20}
+      pb={[80, 40]}
       px={6}
       bgGradient="linear(to-b, #050505, #0c1b1f)"
       color="white"
+      position={"relative"}
     >
+      {/* Bottom Overlay */}
+      <Box
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        height="200px"
+        bgGradient="linear(to-t, blackAlpha.800, transparent)"
+        zIndex={0}
+      />
       <Heading
         mb={4}
         textAlign="center"

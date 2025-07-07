@@ -1,16 +1,16 @@
 import {
   Box,
   Heading,
-  Stack,
+  // Stack,
   Text,
   Button,
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
-const MotionText = motion(Text);
-const MotionBox = motion(Box);
+// const MotionText = motion(Text);
+// const MotionBox = motion(Box);
 
 const expectations = [
   "A transformative celebration of creativity, community, and faith",
@@ -102,7 +102,7 @@ const WhatToExpectSection = () => {
           color="white"
           borderColor="whiteAlpha.500"
           _hover={{ bg: "whiteAlpha.200" }}
-          fontSize="xs"
+          fontSize="sm"
           borderRadius={0}
           bg={"#FFFFFF0A"}
           fontWeight={"light"}
@@ -118,7 +118,7 @@ const WhatToExpectSection = () => {
           color="black"
           // size="sm"
           fontWeight="bold"
-          fontSize="xs"
+          fontSize="sm"
           // _hover={{ bg: "#FFCB04" }}
           borderRadius={0}
           // ml={2}
