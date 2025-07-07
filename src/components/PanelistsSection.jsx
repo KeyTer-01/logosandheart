@@ -11,7 +11,7 @@ import silhouette from "../assets/images/silhouette-square.jpg";
 
 const MotionBox = motion(Box);
 
-const panelists = new Array(4).fill({
+const panelists = new Array(3).fill({
   name: "COMING",
   title: "SOON",
   image: silhouette,
@@ -21,28 +21,28 @@ const PanelistsSection = () => {
   return (
     <Box
       w="100%"
-      bg="#220b06" // rich dark brown
+      bg="#220b06"
       py={{ base: 16, md: 20 }}
       px={{ base: 4, md: 10 }}
       id="panelists"
       position="relative"
       zIndex={-1}
     >
-      <Heading
-        fontFamily="mono"
+      <Text
+        // fontFamily="mono"
         textAlign="center"
         mb={10}
         fontSize={{ base: "3xl", md: "5xl" }}
-        fontWeight="medium"
+        fontWeight="light"
         color="white"
         letterSpacing="widest"
         zIndex={100}
       >
         MEET OUR PANELISTS
-      </Heading>
+      </Text>
 
       <SimpleGrid
-        columns={{ base: 1, md: 2 }}
+        columns={{ base: 1, md: 3 }}
         spacing={{ base: 6, md: 10 }}
         maxW="6xl"
         mx="auto"

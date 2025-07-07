@@ -118,7 +118,7 @@ const GetInTouchSection = () => {
                 bg="gray.900"
                 borderColor="gray.700"
                 _placeholder={{ color: "gray.500" }}
-                _focus={{ borderColor: "#ffcb04", boxShadow: "none" }}
+                _focus={{ borderColor: "#ffcb049f", boxShadow: "none" }}
                 color="white"
                 backgroundColor={"transparent"}
               />
@@ -135,7 +135,7 @@ const GetInTouchSection = () => {
                 bg="gray.900"
                 borderColor="gray.700"
                 _placeholder={{ color: "gray.500" }}
-                _focus={{ borderColor: "#ffcb04", boxShadow: "none" }}
+                _focus={{ borderColor: "#ffcb049f", boxShadow: "none" }}
                 color="white"
                 backgroundColor={"transparent"}
               />
@@ -153,7 +153,7 @@ const GetInTouchSection = () => {
               bg="gray.900"
               borderColor="gray.700"
               _placeholder={{ color: "gray.500" }}
-              _focus={{ borderColor: "#ffcb04", boxShadow: "none" }}
+              _focus={{ borderColor: "#ffcb049f", boxShadow: "none" }}
               color="white"
               backgroundColor={"transparent"}
 
