@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/angkor": "^5.2.6",
     "@fontsource/big-shoulders-display": "^5.2.5",
+    "@fontsource/inter": "^5.2.6",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.511.0",

@@ -1,4 +1,6 @@
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Typewriter } from "react-simple-typewriter";
+import { useState, useEffect } from "react";
 import headingImage from "../assets/images/lah.png";
 
 const definitions = [
@@ -9,6 +11,19 @@ const definitions = [
 ];
 
 const WhatIsLogos = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Progress to the next definition after delay
+  useEffect(() => {
+    if (currentIndex < definitions.length) {
+      const delay = definitions[currentIndex].length * 30 + 1000;
+      const timeout = setTimeout(() => {
+        setCurrentIndex((prev) => prev + 1);
+      }, delay);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex]);
+
   return (
     <Box
       position="relative"
@@ -35,7 +50,7 @@ const WhatIsLogos = () => {
         left="0"
         right="0"
         height="400px"
-        bgGradient="linear(to-t,  transparent, blackAlpha.800)"
+        bgGradient="linear(to-t, transparent, blackAlpha.800)"
         zIndex={1}
       />
 
@@ -77,26 +92,44 @@ const WhatIsLogos = () => {
               mx="auto"
               textAlign="left"
             >
-              {definitions.map((text, index) => (
-                <Flex
-                  key={index}
-                  bg="#FFFFFF0A"
-                  p={4}
-                  borderRadius="md"
-                  alignItems="center"
-                  gap={2}
-                >
-                  <Text
-                    fontWeight={900}
-                    // fontFamily={"tertiary"}
-                    fontSize={28}
-                    color="#FFCB04"
-                  >
-                    !
-                  </Text>
-                  <Text fontSize={["sm", "md"]}>{text}</Text>
-                </Flex>
-              ))}
+              {definitions.map((text, index) => {
+                if (index < currentIndex) {
+                  return (
+                    <Flex
+                      key={index}
+                      bg="#FFFFFF0A"
+                      p={4}
+                      borderRadius="md"
+                      alignItems="center"
+                      gap={2}
+                    >
+                      <Text fontWeight={900} fontSize={28} color="#FFCB04">
+                        !
+                      </Text>
+                      <Text fontSize={["sm", "md"]}>{text}</Text>
+                    </Flex>
+                  );
+                } else if (index === currentIndex) {
+                  return (
+                    <Flex
+                      key={index}
+                      bg="#FFFFFF0A"
+                      p={4}
+                      borderRadius="md"
+                      alignItems="center"
+                      gap={2}
+                    >
+                      <Text fontWeight={900} fontSize={28} color="#FFCB04">
+                        !
+                      </Text>
+                      <Text fontSize={["sm", "md"]}>
+                        <Typewriter words={[text]} typeSpeed={10} />
+                      </Text>
+                    </Flex>
+                  );
+                }
+                return null;
+              })}
             </Grid>
           </Box>
         </Flex>

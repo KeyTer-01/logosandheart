@@ -45,6 +45,7 @@ const theme = extendTheme({
     body: "'Andale Mono', monospace",
     secondary: "'Big Shoulders Display', sans-serif",
     tertiary: "'Angkor', cursive",
+    panelist: "'Inter', sans-serif",
   },
 
   // fonts: {

@@ -24,6 +24,7 @@ const EventDetailsSection = () => {
       color="white"
       position="relative"
       overflow="hidden"
+      zIndex={5}
     >
       {/* Mobile Note (positioned in flow on mobile) */}
       {isMobile && (
@@ -59,7 +60,8 @@ const EventDetailsSection = () => {
         <Button
           leftIcon={<Icon as={LocateFixed} />}
           variant="outline"
-          colorScheme="whiteAlpha"
+          colorScheme="white"
+          opacity={0.8}
           fontFamily="mono"
           width={{ base: "100%", md: "auto" }}
         >
@@ -68,7 +70,8 @@ const EventDetailsSection = () => {
         <Button
           leftIcon={<Icon as={FaRegCalendarAlt} />}
           variant="outline"
-          colorScheme="whiteAlpha"
+          colorScheme="white"
+          opacity={0.8}
           fontFamily="mono"
           width={{ base: "100%", md: "auto" }}
         >
@@ -97,6 +100,7 @@ const EventDetailsSection = () => {
           fontFamily="mono"
           color="yellow.400"
           textAlign="right"
+          zIndex={99}
         >
           Admission is free, <br />
           but registration is compulsory.

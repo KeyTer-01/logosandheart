@@ -76,7 +76,7 @@ const CallForArtists = () => {
           <Box w={["100%", "65%"]}>
             <Heading
               fontSize={{ base: "3xl", md: "5xl" }}
-              fontFamily="mono"
+              // fontFamily="mono"
               fontWeight="medium"
               mb={4}
             >
@@ -96,24 +96,18 @@ const CallForArtists = () => {
                 >
                   <VStack
                     border="1px solid"
-                    borderColor="whiteAlpha.300"
+                    borderColor="#FFFFFF0F"
+                    bg="#FFFFFF05"
                     py={6}
                     px={4}
                     spacing={3}
                     borderRadius="md"
-                    align={["center", "flex-start"]}
+                    align="start"
                     transition="all 0.2s ease"
-                    _hover={{ bg: "whiteAlpha.200" }}
-                    // w={["full", "60%"]}
+                    _hover={{ bg: "whiteAlpha.50", transform: "scale(1.02)" }}
                   >
                     <Image src={item.icon} boxSize={8} color="white" />
-                    <Text
-                      fontSize="sm"
-                      // fontFamily="mono"
-                      color="white"
-                      letterSpacing={1}
-                      // textAlign="center"
-                    >
+                    <Text fontSize="sm" color="white" letterSpacing="wide">
                       {item.label}
                     </Text>
                   </VStack>

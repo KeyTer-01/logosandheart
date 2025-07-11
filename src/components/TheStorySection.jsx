@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { useInView } from "framer-motion";
 
 const MotionBox = motion(Box);
 
@@ -22,32 +23,27 @@ const storyItems = [
   },
 ];
 
-const StoryItem = ({ title, description }) => {
+const StoryItem = ({ title, description, index }) => {
   const ref = useRef();
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { margin: "-20% 0px -20% 0px" });
 
   return (
-    <MotionBox
-      ref={ref}
-      w="100%"
-      py={24}
-      px={6}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
-    >
-      <Heading
-        fontSize={{ base: "lg", md: "2xl" }}
-        mb={4}
-        fontFamily="mono"
-        color="white"
+    <Box ref={ref} w="100%" py={12} px={6} position="relative">
+      <MotionBox
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{ duration: 0.8, delay: index * 0.1 }}
+        zIndex={10 - index}
+        position="relative"
       >
-        {title}
-      </Heading>
-      <Text fontSize="md" color="gray.300" fontFamily="mono">
-        {description}
-      </Text>
-    </MotionBox>
+        <Heading fontSize={{ base: "lg", md: "2xl" }} mb={4} color="white">
+          {title}
+        </Heading>
+        <Text fontSize="md" color="gray.300">
+          {description}
+        </Text>
+      </MotionBox>
+    </Box>
   );
 };
 
@@ -58,28 +54,27 @@ const TheStorySection = () => {
         direction={{ base: "column", md: "row" }}
         maxW="7xl"
         mx="auto"
-        align="flex-start"
+        alignItems="center"
         position="relative"
       >
         {/* Left - Static Section Title */}
         <Box
           flex="1"
-          position={{ base: "static", md: "sticky" }}
-          top="100px"
-          alignSelf="flex-start"
+          // position={{ base: "static", md: "sticky" }}
+          // top="100px"
           pr={{ md: 10 }}
           mb={{ base: 10, md: 0 }}
         >
-          <Heading fontSize={{ base: "2xl", md: "4xl" }} fontFamily="mono">
+          <Heading fontSize={{ base: "2xl", md: "4xl" }}>
             THE STORY <br /> WE’RE TELLING
           </Heading>
-          <Text mt={4} fontSize="sm" color="gray.400" fontFamily="mono">
+          <Text mt={4} fontSize="sm" color="gray.400">
             Through curated artworks, <br />
             we will explore faith&apos;s narrative in three movements
           </Text>
         </Box>
 
-        {/* Divider - Vertical Line with Dot */}
+        {/* Divider */}
         <Flex
           display={{ base: "none", md: "flex" }}
           align="center"
@@ -100,11 +95,12 @@ const TheStorySection = () => {
           />
         </Flex>
 
-        {/* Right - Scrolling Items */}
+        {/* Right - Animated Story Items */}
         <Box flex="2" pl={{ md: 10 }}>
-          {storyItems.map((item, idx) => (
+          {storyItems.map((item, index) => (
             <StoryItem
-              key={idx}
+              key={index}
+              index={index}
               title={item.title}
               description={item.description}
             />
